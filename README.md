@@ -1,6 +1,6 @@
 # Codedamn Projects - Quiz App
 
-![main image](https://raw.githubusercontent.com/JealousGx/100daysofcode/tree/quiz-app/images/startcard.png)
+![main image](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/startcard.png?raw=true)
 
 ## Hello developer!
 
@@ -17,7 +17,7 @@ The header of the application should contain two elements spaced between.
 
    Use the following classes for adding the Left hand icon `fas fa-hand-point-left fa-lg` beside the `View Highscores`. Favicon is already setup in the `<head>` element.
 
-   ![highscores](https://raw.githubusercontent.com/JealousGx/100daysofcode/tree/quiz-app/images/highscores.png)
+   ![highscores](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/highscores.png?raw=true)
 
 1. Time
    Currently no time is shown as the quiz is not started yet
@@ -27,24 +27,24 @@ The header of the application should contain two elements spaced between.
 On clicking on the start quiz button the timer should be set to 50 seconds and the countdown of the timer should begin.
 
 The question as four options are shown
-![quiz question](https://raw.githubusercontent.com/JealousGx/100daysofcode/tree/quiz-app/images/question.png)
+![quiz question](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/question.png?raw=true)
 
 ### Points
 
 On clicking on the correct option the question the next question should appear and correct text should be shown below the question, there will be no change in the timer it will continue to countdown
 
-![correct-question](https://raw.githubusercontent.com/JealousGx/100daysofcode/tree/quiz-app/images/correct-answer.png)
+![correct-question](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/correct-answer.png?raw=true)
 
 If the answer is wrong then you have to subtract 10 seconds from the current time left to answer the questions
 
-![incorrect-answer](https://raw.githubusercontent.com/JealousGx/100daysofcode/tree/quiz-app/images/incorrect-answer.png)
+![incorrect-answer](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/incorrect-answer.png?raw=true)
 
 ### Results
 
 If the timer reaches 0 or the user completes the questions, the box should show `All done!` and the final score of the user and should let the user enter their initials and submit.
 
-![all done](https://raw.githubusercontent.com/JealousGx/100daysofcode/tree/quiz-app/images/all-done.png)
+![all done](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/all-done.png?raw=true)
 
 When submitted the the score should be added to the highscores.
 
-![show highscores](https://raw.githubusercontent.com/JealousGx/100daysofcode/tree/quiz-app/images/show-highscores.png)
+![show highscores](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/show-highscores.png?raw=true)
