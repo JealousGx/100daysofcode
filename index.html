@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Codedamn - Quiz Project</title>
+</head>
+
+<body>
+    <header>
+        <a id="leaderboard">View Highscores <i class="fas fa-hand-point-left fa-lg"></i>
+        </i></a> 
+        <div class="timer">Time: <span>00</span> seconds</div>
+    </header>
+    <main>
+        <div class="container questionaire">
+            <h2 class="question">Question</h2>
+            <div class="options">
+                <div class="option">Option#1</div>
+                <div class="option">Option#1</div>
+                <div class="option">Option#1</div>
+                <div class="option">Option#1</div>
+            </div>
+        </div>
+
+        <div class="container quiz-start">
+            <h2 class="question">Coding Quiz Challenge</h2>
+            <p>Try to answer the following code-related questions within the time limit.<br />Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <div class="btn start-btn">Start Quiz</div>
+        </div>
+
+        <div class="container quiz-finish">
+            <h2>All done!</h2>
+            <p>Your final score is 40.</p>
+            <div class="user">
+                <div class="username">
+                    <span>Enter initials: </span>
+                    <input type="text" name="username" id="user">
+                    <div class="btn">Submit</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container scores">
+            <div class="info">
+                <h2>Highscores</h2>
+                <p>1. CJ - 43</p>
+                <p>2. AB - 00</p>
+                <p>3. CD - 12</p>
+                <p>4. EF - 30</p>
+                <p>5. GH - 01</p>
+            </div>
+
+            <div class="btns">
+                <div class="btn back">Go back</div>
+                <div class="btn clear">Clear Highscores</div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

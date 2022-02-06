@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+header {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #218380;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+header #leaderboard {
+  cursor: pointer;
+}
+
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.3rem;
+  background-color: #218380;
+  color: #ffffff;
+  width: 8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.container {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 9rem;
+  width: 90%;
+  height: 21rem;
+  border: 0.13rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  -webkit-box-shadow: 12px 12px 18px -8px rgba(0, 0, 0, 0.33);
+          box-shadow: 12px 12px 18px -8px rgba(0, 0, 0, 0.33);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .questionaire {
+  display: none;
+}
+
+main .quiz-start {
+  display: none;
+}
+
+main .quiz-start .question {
+  margin: 2.3rem 0 1.3rem 0;
+  text-align: start;
+}
+
+main .quiz-start p {
+  line-height: 2;
+  font-size: 16px;
+  color: #000000;
+}
+
+main .quiz-finish {
+  display: none;
+  width: 25rem;
+  height: 12rem;
+}
+
+main .quiz-finish .user {
+  margin-top: 1rem;
+}
+
+main .quiz-finish .user .username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.75rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .quiz-finish .user .username #user {
+  width: 6rem;
+  padding: 0.2rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+main .quiz-finish .user .btn {
+  margin-top: 0;
+  width: 6rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+main .scores {
+  width: 22rem;
+  height: 17rem;
+  padding: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .scores .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.2rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .scores .btns .btn {
+  padding: 0.75rem 0.1rem;
+}
+
+main .scores .btns .back {
+  padding: 0.75rem 0.6rem;
+}
+
+main .scores .btns .clear {
+  width: 100%;
+}
+
+main .container h2 {
+  margin: 1rem 0;
+}
+
+main .container .options {
+  width: 100%;
+}
+
+main .container .options .option {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  color: #ffffff;
+  background-color: #218380;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 960px) {
+  main .quiz-finish h2 {
+    margin-top: 0rem;
+  }
+  main .quiz-start .question {
+    margin-top: 1rem;
+  }
+  main .container {
+    width: 50%;
+    padding: 2.5rem;
+    margin-top: 5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
