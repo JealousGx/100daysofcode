@@ -76,7 +76,7 @@ startQuizBtn.onclick = () => {
       timerElement.textContent = "00";
     }
   }, 1000);
-  if (questionaireContainer.style.display != 'block' || startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block') {
+  if (startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block') {
     setTimeout(() => {
       console.log("Inside!");
         questionaireContainer.style.display = "none";
