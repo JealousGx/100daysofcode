@@ -76,8 +76,10 @@ startQuizBtn.onclick = () => {
     }
   }, 1000);
   setTimeout(() => {
-    questionaireContainer.style.display = "none";
-    quizFinishContainer.style.display = "block";
+    if (quizFinishContainer.style.display === "none") {
+      questionaireContainer.style.display = "none";
+      quizFinishContainer.style.display = "block";
+    }
   }, 50000);
 };
 
