@@ -48,3 +48,6 @@ If the timer reaches 0 or the user completes the questions, the box should show 
 When submitted the the score should be added to the highscores.
 
 ![show highscores](https://github.com/JealousGx/100daysofcode/blob/quiz-app/images/show-highscores.png?raw=true)
+
+#### Live demo
+[Live site](https://jealous-quiz.netlify.app)
