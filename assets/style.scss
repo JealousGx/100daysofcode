@@ -72,10 +72,15 @@ main {
 
   .questionaire {
     display: none;
+    height: 25rem;
+
+    .question {
+      padding: 0.5rem;
+    }
   }
 
   .quiz-start {
-    display: none;
+    // display: none;
 
     .question {
       margin: 2.3rem 0 1.3rem 0;
@@ -125,7 +130,7 @@ main {
   }
 
   .scores {
-    // display: none;
+    display: none;
     width: 22rem;
     height: 17rem;
     padding: 2rem;

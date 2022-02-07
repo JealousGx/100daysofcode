@@ -83,6 +83,11 @@ main {
 
 main .questionaire {
   display: none;
+  height: 25rem;
+}
+
+main .questionaire .question {
+  padding: 0.5rem;
 }
 
 main .quiz-start {
@@ -101,7 +106,6 @@ main .quiz-start p {
 }
 
 main .quiz-finish {
-  display: none;
   width: 25rem;
   height: 12rem;
 }
@@ -143,6 +147,7 @@ main .quiz-finish .user .btn {
 }
 
 main .scores {
+  display: none;
   width: 22rem;
   height: 17rem;
   padding: 2rem;
