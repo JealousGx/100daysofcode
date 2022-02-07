@@ -61,7 +61,7 @@ startQuizContainer.style.display = "block";
 highScoresContainer.style.display = "none";
 
 let secs = 50;
-let timer;
+let timer, timeout;
 
 startQuizBtn.onclick = () => {
   startQuizContainer.style.display = "none";
@@ -76,14 +76,15 @@ startQuizBtn.onclick = () => {
       timerElement.textContent = "00";
     }
   }, 1000);
+  let timeoutSecs = secs * 1000;
   if (startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block') {
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       console.log("Inside!");
         questionaireContainer.style.display = "none";
         quizFinishContainer.style.display = "block";
         startQuizContainer.style.display = "none";
         highScoresContainer.style.display = "none";
-    }, 50000);
+    }, timeoutSecs);
   }
 };
 
@@ -100,6 +101,7 @@ function nextQuestion(j) {
     quizFinishContainer.style.display = "block";
     userScore.textContent = secs;
     clearInterval(timer);
+    clearTimeout(timeout);
   }
 
   for (let i = 0; i < 4; i++) {
