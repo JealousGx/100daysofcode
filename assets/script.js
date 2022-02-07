@@ -95,7 +95,7 @@ function nextQuestion(j) {
     currentQuestion = questions[j];
     currentAnswer = currentQuestion.answer;
     questionElement.textContent = currentQuestion.questionText;
-  } else if (j === 5 || (questionaireContainer.style.display != 'block' || startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block')) {
+  } else if (j === 5  || startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block') {
     questionaireContainer.style.display = "none";
     quizFinishContainer.style.display = "block";
     userScore.textContent = secs;
