@@ -77,7 +77,7 @@ startQuizBtn.onclick = () => {
     }
   }, 1000);
   let timeoutTime = secs * 1000;
-  if (questionaireContainer.style.display !== 'block' || startQuizContainer.style.display !== 'block' || highScoresContainer.style.display !== 'block') {
+  if (questionaireContainer.style.display != 'block' || startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block') {
     setTimeout(() => {
         questionaireContainer.style.display = "none";
         quizFinishContainer.style.display = "block";
