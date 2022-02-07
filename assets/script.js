@@ -79,6 +79,7 @@ startQuizBtn.onclick = () => {
   let timeoutTime = secs * 1000;
   if (questionaireContainer.style.display != 'block' || startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block') {
     setTimeout(() => {
+      console.log("Inside!");
         questionaireContainer.style.display = "none";
         quizFinishContainer.style.display = "block";
         startQuizContainer.style.display = "none";
