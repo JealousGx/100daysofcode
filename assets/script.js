@@ -77,12 +77,11 @@ startQuizBtn.onclick = () => {
   }, 1000);
   setTimeout(() => {
     if (questionaireContainer.style.display !== 'block' || startQuizContainer.style.display !== 'block' || highScoresContainer.style.display !== 'block') {
-
+      questionaireContainer.style.display = "none";
+      quizFinishContainer.style.display = "block";
+      startQuizContainer.style.display = "none";
+      highScoresContainer.style.display = "none";
     }
-    questionaireContainer.style.display = "none";
-  quizFinishContainer.style.display = "block";
-  startQuizContainer.style.display = "none";
-  highScoresContainer.style.display = "none";
   }, 50000);
 };
 
