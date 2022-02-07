@@ -76,7 +76,6 @@ startQuizBtn.onclick = () => {
       timerElement.textContent = "00";
     }
   }, 1000);
-  let timeoutTime = secs * 1000;
   if (questionaireContainer.style.display != 'block' || startQuizContainer.style.display != 'block' || highScoresContainer.style.display != 'block') {
     setTimeout(() => {
       console.log("Inside!");
@@ -84,7 +83,7 @@ startQuizBtn.onclick = () => {
         quizFinishContainer.style.display = "block";
         startQuizContainer.style.display = "none";
         highScoresContainer.style.display = "none";
-    }, timeoutTime);
+    }, 50000);
   }
 };
 
