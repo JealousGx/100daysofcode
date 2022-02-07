@@ -72,17 +72,19 @@ startQuizBtn.onclick = () => {
       secs--;
       timerElement.textContent = secs;
     } else {
+      secs = 0;
       timerElement.textContent = "00";
     }
   }, 1000);
-  setTimeout(() => {
-    if (questionaireContainer.style.display !== 'block' || startQuizContainer.style.display !== 'block' || highScoresContainer.style.display !== 'block') {
-      questionaireContainer.style.display = "none";
-      quizFinishContainer.style.display = "block";
-      startQuizContainer.style.display = "none";
-      highScoresContainer.style.display = "none";
-    }
-  }, 50000);
+  let timeoutTime = secs * 1000;
+  if (questionaireContainer.style.display !== 'block' || startQuizContainer.style.display !== 'block' || highScoresContainer.style.display !== 'block') {
+    setTimeout(() => {
+        questionaireContainer.style.display = "none";
+        quizFinishContainer.style.display = "block";
+        startQuizContainer.style.display = "none";
+        highScoresContainer.style.display = "none";
+    }, timeoutTime);
+  }
 };
 
 let currentAnswer,
