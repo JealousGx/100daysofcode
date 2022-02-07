@@ -122,6 +122,7 @@ for (let i = 0; i < 4; i++) {
       showAnswer.textContent = "Incorrect!";
       showAnswer.style.padding = "0.35rem 0 0 0.75rem";
       showAnswer.style.borderTop = "1px solid rgba(0, 0, 0, 0.2)";
+      secs -= 10;
       setTimeout(() => {
         nextQuestion(++j);
         showAnswer.textContent = "";
