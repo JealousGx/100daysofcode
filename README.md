@@ -1,4 +1,4 @@
-<h1 align="center">Tourism Travel Site</h1>
+<h1 align="center">Discord Clone</h1>
 
 <div align="center">
   <h3>
