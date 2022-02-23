@@ -1,10 +1,9 @@
 import React from 'react'
 import Navbar from './Navbar';
-import styles from './styles.module.css';
 
 const Header = () => {
   return (
-    <div className={styles.container}>
+    <div className='lg:h-[94vh] h-[100vh] bg-[#404eed]'>
       <Navbar />
       </div>
   )
