@@ -1,11 +1,12 @@
 import React from 'react'
-// import Navbar from './Header/Navbar'
 import Header from './Header'
+import HeroSection from './HeroSection'
 
-const Homepage = () => {
+const Homepage: React.FC = () => {
   return (
     <div>
       <Header />
+      <HeroSection />
     </div>
   )
 }

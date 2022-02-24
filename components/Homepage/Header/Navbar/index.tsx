@@ -6,15 +6,16 @@ import hamburger from '../../../assets/hamburger.svg';
 import logo from '../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_white_RGB.svg';
 import darkLogo from '../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_black_RGB.svg';
 
-const Navbar = () => {
-  const [displayNav, setDisplayNav] = useState(false);
-  const handleNavbar = (e: Event) => {
+const Navbar: React.FC = () => {
+  const [displayNav, setDisplayNav] = useState<boolean>(false);
+  
+  const handleNavbar = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     setDisplayNav(displayNav === false ? true : false);
   } 
 
   return (
-    <div className='min-w-full lg:py-5 lg:px-[5rem] py-4 px-6 flex items-center justify-between'>
+    <div className='xl:px-[20vw] lg:px-[5rem] min-w-full flex items-center justify-between'>
         <Image src={logo} alt="Discord Logo" width={124} height={24} className="cursor-pointer" />
           <div className='lg:block hidden'>
             <ul className='flex items-center justify-center'>
@@ -26,11 +27,11 @@ const Navbar = () => {
               <li className='capitalize mr-8 text-white font-[640] text-[0.95rem] cursor-pointer hover:underline'>careers</li>
             </ul>
           </div>
-          <div className="right-wrapper flex flex-row items-center justify-center">
+          <div className="right-wrapper h-full flex flex-row items-center justify-center">
             <div className="py-2 px-4 font-semibold text-sm rounded-3xl hover:shadow-xl hover:text-blurple transition-all duration-200 ease-linear bg-white cursor-pointer mr-4">Login</div>
             <div className="hamburger sm:block lg:hidden">
               <Image onClick={(event) => handleNavbar(event)} src={hamburger} alt="Hamburger" className='cursor-pointer filter invert'/>
-              <div className={`${displayNav === true ? `absolute top-0 right-0 rounded-l-lg z-40 w-[90%] md:w-[40%] max-w-md min-h-full bg-white` : `hidden`}`}>
+              <div className={`${displayNav === true ? `absolute top-0 right-0 rounded-l-lg z-40 w-[90%] md:w-[40%] max-w-md min-h-[100vh] bg-white` : `hidden`}`}>
                   <div className="p-7 flex items-center justify-between">
                     <Image src={darkLogo} alt="Dark Logo" width={124} height={24} className="cursor-pointer" />
                     <div onClick={(event) => handleNavbar(event)} className="relative closeIcon p-3 mr-3 cursor-pointer">
@@ -65,7 +66,7 @@ const Navbar = () => {
                         <span className='hover:underline'>careers</span>
                       </li>
                       <div className="flex items-center justify-center">
-                      <button className="absolute bottom-5 py-2 w-[80%] capitalize font-medium text-sm text-white rounded-3xl bg-blurple hover:opacity-80 transition-opacity duration-200 ease-in"><FileDownloadOutlinedIcon fontSize="medium" /><span className="ml-2">Download for windows</span></button>
+                      <button className="absolute bottom-5 py-2 w-[80%] capitalize font-medium text-sm text-white rounded-3xl bg-blurple hover:opacity-80 transition-opacity duration-200 ease-in"><FileDownloadOutlinedIcon fontSize="medium" /><span className="ml-2 pt-[0.8rem]">Download for windows</span></button>
                       </div>
                     </ul>  
                   </div>

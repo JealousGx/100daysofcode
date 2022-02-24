@@ -9,6 +9,14 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        'xl': '1400px',
+      },
+      fontFamily: {
+        "heading": ['GintoNord-Black'],
+        "heading-2": ['GintoNord-Medium'],
+        "body": ['Whitney-Book-Bas'],
+      },
       colors: {
         'blurple': '#5865F2',
         'green': '#57F287',
@@ -16,6 +24,7 @@ module.exports = {
         'red': '#ED4245',
         'white': '#FFFFFF',
         'black': '#23272A',
+        'hover-black': '#23272ab3',
       },
       fontSize: {
         'sm': "0.875rem"
