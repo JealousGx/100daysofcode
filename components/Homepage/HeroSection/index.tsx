@@ -1,5 +1,7 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import StudyGroup from '../../assets/study-group.svg';
 import VoiceConnected from '../../assets/voice-connected-chilling.svg';
@@ -44,11 +46,14 @@ const heroData: HeroDataType[] = [
 ]
 
 const HeroSection: React.FC = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <>
       {heroData.map((element) => {
         return (
-          <div key={element.id} className={`lg:max-w-full py-[5rem] px-8 w-full flex items-center justify-center lg:gap-[8rem] flex-col ${element.alternate === true ? `md:flex-row-reverse` : `md:flex-row`} ${element.grayBg === true && `bg-[#F6F6F6]`}`}>
+          <div data-aos='fade-up' key={element.id} className={`lg:max-w-full py-[5rem] px-8 w-full flex items-center justify-center lg:gap-[8rem] flex-col ${element.alternate === true ? `md:flex-row-reverse` : `md:flex-row`} ${element.grayBg === true && `bg-[#F6F6F6]`}`}>
             <Image src={element.img} alt="Study Group" className='flex w-1/4' />
             <div className="info flex mt-[2rem] sm:mt-0 xl:w-[25vw] md:w-1/3 items-center justify-center flex-col">
               <h2 className="font-heading-2 xl:text-[3rem] xl:leading-[4rem] lg:text-[3vw] sm:text-[3vw] text-[4vw] text-black mb-[1rem] lg:leading-[4vw]">{element.heading}</h2>
@@ -57,7 +62,7 @@ const HeroSection: React.FC = () => {
           </div>
         )
       })}
-      <div className='bg-[#F6F6F6] py-[5rem] lg:max-w-full px-8 w-full flex items-center justify-center lg:gap-4 flex-col-reverse'>
+      <div data-aos='fade-up' className='bg-[#F6F6F6] py-[5rem] lg:max-w-full px-8 w-full flex items-center justify-center lg:gap-4 flex-col-reverse'>
         <div className="relative downB">
           <Image src={Stars} alt="Stars" className='absolute bottom-0-z-10' />
           <h2 className='relative z-10 font-heading-2 text-2xl font-extrabold text-center -mt-6'>Ready to start your journey?</h2>
