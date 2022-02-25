@@ -25,6 +25,13 @@ module.exports = {
         'white': '#FFFFFF',
         'black': '#23272A',
         'hover-black': '#23272ab3',
+        'login-black': '#36393F', // Login Container Color
+        'gray-text': '#72767d', // Gray Text Color
+        'hyperlink': '#00aff4', // HyperLink Color
+        'button-hover': '#4752c4', // Hover Color for Button
+        'info-text': '#b9bbbe', // Info Text Color
+        'label': '#dcddde', // Label Text Color
+        'input': '#202225', // Input Background Color
       },
       fontSize: {
         'sm': "0.875rem"
