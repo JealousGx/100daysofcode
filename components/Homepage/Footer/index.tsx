@@ -9,6 +9,14 @@ import Logo from '../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_whi
 import USAFlag from '../../assets/usa_flag.png';
 
 const Footer: React.FC = () => {
+
+  const gotoTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <div className='bg-black px-[2rem] md:px-[6rem] xl:px-[15vw] py-[5rem]'>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[2rem] pb-8">
@@ -60,7 +68,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="flex items-center justify-between border-t-[1px] border-t-blurple pt-8">
-        <div className="w-[9rem] cursor-pointer">
+        <div className="w-[9rem] cursor-pointer" onClick={gotoTop}>
           <Image src={Logo} alt="Logo"/>
         </div>
         <div className="btn">

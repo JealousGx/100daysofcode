@@ -2,6 +2,10 @@
 
 <div align="center">
   <h3>
+    <a href="https://jealousgx-discord.netlify.app">
+      Demo
+    </a>
+    <span> | </span>
     <a href="https://github.com/JealousGx/100daysofcode/tree/discord-clone">
       Code
     </a>
@@ -10,17 +14,21 @@
 
 ## Overview
 
-![Desktop Navbar](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/achievements/desktop-navbar.png)
+![Desktop Page](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/achievements/desktop-landing-page.png)
 
-![Mobile Navbar](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/achievements/mobile-navbar.png)
+![Mobile Page](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/achievements/mobile-landing-page.png)
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
+jealous-discord.netlify.app
+
 - NextJS
 - TypeScript
 - TailwindCSS
+- Animate On Scroll (AOS)
+- MaterialUI Icons
 
 ## Contact
 

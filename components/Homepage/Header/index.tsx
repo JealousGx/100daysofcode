@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         <Image src={Clouds} alt="Clouds" />
       </div>
       <div className="w-full -z-10 mt-[4rem] lg:mt-[7rem] flex items-center lg:justify-center flex-col-reverse md:flex-row">
-        <div className="lg:block md:hidden block absolute -bottom-[0.4rem] -left-[20%] lg:-left-[25%] xl:left-0 max-w-full z-1">
+        <div className="lg:block md:hidden block absolute -bottom-[0.4rem] -left-[20%] lg:-left-[40%] xl:left-0 max-w-full z-1">
           <Image src={Chilling1} alt="Chilling" />
         </div>
         <div className="md:w-[40rem] lg:w-[50rem] w-full text-white flex lg:items-center items-start justify-center flex-col text-left lg:text-center z-10">
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
             <button className='py-[0.55rem] px-8 bg-black lg:text-[1rem] xl:text-[1.25rem] sm:text-xl font-semibold text-white rounded-[2rem] hover:shadow-2xl hover:bg-gray-700 transition-all duration-250 ease-in'>Open Discord in your browser</button>
           </div>
         </div>
-        <div className="chilling2 hidden md:block sm:hidden absolute -bottom-[0.4rem] -right-[20%] lg:-right-[20%] xl:right-0 -z-10">
+        <div className="chilling2 hidden md:block sm:hidden absolute -bottom-[0.4rem] -right-[20%] lg:-right-[25%] xl:right-0 -z-10">
           <Image src={Chilling2} alt="Chilling" />
         </div>
       </div>

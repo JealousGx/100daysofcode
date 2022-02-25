@@ -5,7 +5,7 @@ import HeroSection from './HeroSection'
 
 const Homepage: React.FC = () => {
   return (
-    <div>
+    <div className='scroll-smooth'>
       <Header />
       <HeroSection />
       <Footer />
