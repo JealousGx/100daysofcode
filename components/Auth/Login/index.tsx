@@ -19,11 +19,11 @@ const index: React.FC = () => {
             <ul className='flex flex-col'>
               <li className='flex flex-col py-[0.375rem]'>
                 <label className='text-info-text uppercase text-[0.775rem] font-extrabold pb-[0.3rem]'>email</label>
-                <input type="email" name="email" autoComplete='off' className='mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-[#ffffff] rounded-[0.175rem] outline-none border-[1.5px] border-solid border-[#000000] border-opacity-40 hover:border-opacity-100 focus:border-hyperlink transition-all duration-250 ease-linear' />
+                <input type="email" name="email" autoComplete='off' className='mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.5px] border-solid border-[#000000] border-opacity-40 hover:border-opacity-100 focus:border-hyperlink transition-all duration-250 ease-linear' />
               </li>
               <li className='flex flex-col pt-[0.375rem]'>
                 <label className='text-info-text uppercase text-[0.775rem] font-extrabold pb-[0.3rem]'>password</label>
-                <input type="password" name="password" className='bg-[#303339] py-[0.5rem] px-[0.75rem] text-[#ffffff] rounded-[0.175rem] outline-none border-[1.5px] border-solid border-[#000000] border-opacity-40 hover:border-opacity-100 focus:border-hyperlink transition-all duration-250 ease-linear' />
+                <input type="password" name="password" className='bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.5px] border-solid border-[#000000] border-opacity-40 hover:border-opacity-100 focus:border-hyperlink transition-all duration-250 ease-linear' />
               </li>
               <label className='text-hyperlink hover:underline text-sm pt-[0.15rem] cursor-pointer'>Forgot your password?</label>
             </ul>
