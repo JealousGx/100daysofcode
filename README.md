@@ -14,9 +14,7 @@
 
 ## Overview
 
-![Desktop Page](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/achievements/desktop-landing-page.png)
-
-![Mobile Page](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/achievements/mobile-landing-page.png)
+![Landing Page](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/achievements/Discord%20Landing%20Page.png)
 
 ### Built With
 
