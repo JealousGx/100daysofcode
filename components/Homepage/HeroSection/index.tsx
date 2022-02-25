@@ -65,14 +65,14 @@ const HeroSection: React.FC = () => {
       <div data-aos='fade-up' className='bg-[#F6F6F6] py-[5rem] lg:max-w-full px-8 w-full flex items-center justify-center lg:gap-4 flex-col-reverse'>
         <div className="relative downB">
           <Image src={Stars} alt="Stars" className='absolute bottom-0-z-10' />
-          <h2 className='relative z-10 font-heading-2 text-2xl font-extrabold text-center -mt-6'>Ready to start your journey?</h2>
+          <h2 className='relative z-[5] font-heading-2 text-2xl font-extrabold text-center -mt-6'>Ready to start your journey?</h2>
           <div className="flex items-center justify-center">
             <button className="text-center mt-[3rem] py-[0.8rem] px-8 capitalize font-medium text-xl text-white rounded-3xl bg-blurple hover:opacity-80 hover:shadow-xl transition-all duration-200 ease-in"><FileDownloadOutlinedIcon fontSize="medium" /><span className="ml-2 pt-[0.8rem]">Download for windows</span></button>
           </div>
         </div>
         <Image src={Chilling} alt="Chilling" />
-        <div className="w-[80%] flex items-center justify-center flex-col">
-          <h2 className='font-heading xl:text-[3rem] xl-leading-[4rem] lg:text-[3vw] sm:text-[3vw] text-[4vw] text-black mb-[1rem] lg:-leading-[4vw] uppercase'>reliable tech for staying close</h2>
+        <div className="w-[80%] lg:w-[50rem] xl:w-[60rem] flex items-center justify-center flex-col">
+          <h2 className='font-heading xl:text-[2.5rem] xl-leading-[4rem] lg:text-[3vw] sm:text-[3vw] text-[4vw] text-black mb-[1rem] lg:-leading-[4vw] uppercase'>reliable tech for staying close</h2>
           <p className='text-xl font-thin leading-7 text-black opacity-90 text-center'>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</p>
         </div>
       </div>

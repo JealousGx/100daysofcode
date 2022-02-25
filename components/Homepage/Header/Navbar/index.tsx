@@ -31,7 +31,8 @@ const Navbar: React.FC = () => {
             <div className="py-2 px-4 font-semibold text-sm rounded-3xl hover:shadow-xl hover:text-blurple transition-all duration-200 ease-linear bg-white cursor-pointer mr-4">Login</div>
             <div className="hamburger sm:block lg:hidden">
               <Image onClick={(event) => handleNavbar(event)} src={hamburger} alt="Hamburger" className='cursor-pointer filter invert'/>
-              <div className={`${displayNav === true ? `absolute top-0 right-0 rounded-l-lg z-40 w-[90%] md:w-[40%] max-w-md min-h-[100vh] bg-white` : `hidden`}`}>
+              <div className={`${displayNav === true ? `fixed inset-0 z-[100] opacity-100 w-[100%] h-[100%]` : `opacity-0`} bg-[#0000008c]`}>
+              <div className={`${displayNav === true ? `absolute top-0 right-0 rounded-l-lg z-40 w-[90%] md:w-[40%] max-w-md h-full bg-white` : `hidden`}`}>
                   <div className="p-7 flex items-center justify-between">
                     <Image src={darkLogo} alt="Dark Logo" width={124} height={24} className="cursor-pointer" />
                     <div onClick={(event) => handleNavbar(event)} className="relative closeIcon p-3 mr-3 cursor-pointer">
@@ -39,7 +40,7 @@ const Navbar: React.FC = () => {
                       <span className='absolute z-50 w-[1.25rem] h-[0.125rem] rotate-[135deg] bg-black'></span>
                     </div>
                   </div>
-                  <div className="content p-1 pl-7 w-full">
+                  <div className="overflow-y-auto p-1 pl-7 w-full">
                     <ul className='w-[90%] border-t-[0.1rem]'>
                       <li className="mt-[1.05rem] px-4 py-[0.5rem] w-full cursor-pointer rounded-lg font-normal text-md capitalize text-[#00B5F4] bg-[#0000000a]">
                         <span className='hover:underline'>home</span>
@@ -71,6 +72,7 @@ const Navbar: React.FC = () => {
                     </ul>  
                   </div>
                 </div>
+              </div>
             </div>
           </div>  
     </div>

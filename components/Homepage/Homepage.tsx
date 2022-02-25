@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 import Header from './Header'
 import HeroSection from './HeroSection'
 
@@ -7,6 +8,7 @@ const Homepage: React.FC = () => {
     <div>
       <Header />
       <HeroSection />
+      <Footer />
     </div>
   )
 }
