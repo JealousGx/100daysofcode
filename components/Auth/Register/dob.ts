@@ -1,16 +1,16 @@
-const today = new Date().getFullYear();
-const years = [];
-const dates = [];
-let startYear = 1870;
+const today = new Date().getFullYear()
+const years = []
+const dates = []
+let startYear = 1870
 while (startYear <= today) {
-  years.push(startYear++);
+  years.push(startYear++)
 }
-years.reverse();
+years.reverse()
 years.splice(0, 3)
 
-let i = 1;
+let i = 1
 while (i <= 31) {
-  dates.push(i++);
+  dates.push(i++)
 }
 
 export const DOB = [
@@ -67,5 +67,5 @@ export const DOB = [
     ],
     years,
     dates,
-  }
+  },
 ]
