@@ -23,6 +23,7 @@
 - NextJS
 - TypeScript
 - TailwindCSS
+- Styled Components
 - React Hook Form (Login & Register)
 - Animate On Scroll (AOS)
 - MaterialUI Icons

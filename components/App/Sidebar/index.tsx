@@ -8,13 +8,13 @@ import AddIcon from "@mui/icons-material/Add"
 import ExploreIcon from "@mui/icons-material/Explore"
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 
-import { ServerButton } from './styles';
+import { ServerButton } from "./styles"
 
 interface serversType {
-  id: number,
-  btnText: string,
-  img: StaticImageData,
-  type: string,
+  id: number
+  btnText: string
+  img: StaticImageData
+  type: string
   activeClass?: boolean | false
 }
 
@@ -37,15 +37,14 @@ const servers: serversType[] = [
     img: ThirdServer,
     type: "server",
     activeClass: true,
-  }
+  },
 ]
 
 const Index = ({ children }: any) => {
-  const [clicked, setClicked] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(false)
 
   const handleActiveClass = (e: any) => {
-    e.preventDefault();
-
+    e.preventDefault()
   }
 
   return (
@@ -58,15 +57,23 @@ const Index = ({ children }: any) => {
           <span className="w-[1.925rem] h-[0.125rem] my-2 bg-login-black opacity-70" />
         </div>
         <div className="flex items-center justify-center flex-col">
-          {
-            servers.map((server) => {
-              return (
-                <ServerButton key={server.id} btnText={server.btnText} type={server.type} className={server.activeClass ? `active` : ``}>
-                  <Image src={server.img} alt={server.btnText} width={26} height={29} />
-                </ServerButton>
-              )
-            })
-          }
+          {servers.map((server) => {
+            return (
+              <ServerButton
+                key={server.id}
+                btnText={server.btnText}
+                type={server.type}
+                className={server.activeClass ? `active` : ``}
+              >
+                <Image
+                  src={server.img}
+                  alt={server.btnText}
+                  width={26}
+                  height={29}
+                />
+              </ServerButton>
+            )
+          })}
           <ServerButton type="discordBtn" btnText="Add a server">
             <AddIcon fontSize="medium" />
           </ServerButton>
