@@ -20,11 +20,12 @@
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- NextJS
-- TypeScript
-- TailwindCSS
-- Animate On Scroll (AOS)
-- MaterialUI Icons
+- [] NextJS
+- [] TypeScript
+- [] TailwindCSS
+- [] React Hook Form (Login & Register)
+- [] Animate On Scroll (AOS)
+- [] MaterialUI Icons
 
 ## Contact
 

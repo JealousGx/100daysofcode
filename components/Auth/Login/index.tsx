@@ -112,7 +112,7 @@ const Index = () => {
                   />
                 </li>
                 <label className="text-hyperlink hover:underline text-sm pt-[0.15rem] cursor-pointer">
-                  Forgot your password?
+      Forgot your password?
                 </label>
               </ul>
               <button
