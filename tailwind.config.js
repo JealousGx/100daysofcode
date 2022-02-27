@@ -9,6 +9,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      maxWidth: {
+        "page": "1260px",
+      },
       screens: {
         xl: "1400px",
       },
@@ -19,6 +22,13 @@ module.exports = {
       },
       colors: {
         blurple: "#5865F2",
+        "brand-gradient": "linear-gradient(90deg, #8ea1e1, #7289da)",
+        greyple: "#99aab5",
+        dark: "#2c2f33",
+        "focus-border": "#00b0f4",
+        "status-green": "#43b581",
+        "off-white": "#f6f6f6",
+        "ekko-red": "#de2761",
         green: "#57F287",
         yellow: "#FEE75C",
         red: "#ED4245",
