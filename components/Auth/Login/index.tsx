@@ -1,5 +1,7 @@
 import Head from "next/head"
-import React from "react"
+import React, { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 import { SubmitHandler, useForm } from "react-hook-form"
 import qrCode from "../../assets/qr_code.png"
 import Image from "next/image"
@@ -17,6 +19,15 @@ const Index = () => {
     formState: { errors },
   } = useForm<IFormValues>()
 
+  useEffect(() => {
+    AOS.init({
+      offset: 500,
+      duration: 250,
+      easing: "ease-in-sine",
+      delay: 50,
+    })
+  }, [])
+
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     console.log(data)
   }
@@ -27,7 +38,10 @@ const Index = () => {
         <title>Discord</title>
       </Head>
       <div className="h-screen w-screen flex items-center justify-center bg-[url('../components/assets/login_bg.svg')] bg-cover">
-        <div className="container p-6 pb-[2rem] md:w-[50rem] w-screen md:h-[26rem] h-screen flex md:flex-row md:gap-10 bg-login-black shadow-xl md:rounded-[0.275rem]">
+        <div
+          data-aos="fade-down"
+          className="container p-6 pb-[2rem] md:w-[50rem] w-screen md:h-[26rem] h-screen flex md:flex-row md:gap-10 bg-login-black shadow-xl md:rounded-[0.275rem]"
+        >
           <div className="flex items-center justify-center flex-col grow-[3] px-3">
             <h1 className="text-[#ffffff] text-[1.5rem] font-heading-2 font-normal">
               Welcome back!
