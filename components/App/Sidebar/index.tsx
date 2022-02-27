@@ -8,63 +8,76 @@ import AddIcon from "@mui/icons-material/Add"
 import ExploreIcon from "@mui/icons-material/Explore"
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 
+import { ServerButton } from './styles';
+
+interface serversType {
+  id: number,
+  btnText: string,
+  img: StaticImageData,
+  type: string,
+  activeClass?: boolean | false
+}
+
+const servers: serversType[] = [
+  {
+    id: 1,
+    btnText: "Jealous Server",
+    img: ServerLogo,
+    type: "server",
+  },
+  {
+    id: 2,
+    btnText: "Web Development Help",
+    img: SecondServer,
+    type: "server",
+  },
+  {
+    id: 3,
+    btnText: "👋 Football Updates",
+    img: ThirdServer,
+    type: "server",
+    activeClass: true,
+  }
+]
+
 const Index = ({ children }: any) => {
-  // const [clicked, setClicked] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(false);
+
+  const handleActiveClass = (e: any) => {
+    e.preventDefault();
+
+  }
 
   return (
     <div className="w-screen h-screen flex flex-row">
       <div className="w-[4.5rem] h-full px-[0.75rem] py-[0.75rem] bg-black">
         <div className="flex items-center justify-center flex-col">
-          <div
-            className={`home w-12 h-12 p-1 bg-login-black rounded-full flex items-center justify-center cursor-pointer hover:bg-blurple hover:rounded-2xl active:rounded-2xl transition-all duration-150 ease-in-out`}
-          >
+          <ServerButton btnText="Home" type="home">
             <Image src={Logo} alt="Discord Logo" width={26} height={29} />
-          </div>
+          </ServerButton>
           <span className="w-[1.925rem] h-[0.125rem] my-2 bg-login-black opacity-70" />
         </div>
         <div className="flex items-center justify-center flex-col">
-          <div
-            className={`server1 w-12 h-12 p-1 mb-[0.75rem] bg-off-white rounded-full flex items-center justify-center cursor-pointer hover:rounded-2xl active:rounded-2xl transition-all duration-150 ease-in-out`}
-          >
-            <Image src={ServerLogo} alt="Discord Logo" width={26} height={29} />
-          </div>
-          <div
-            className={`server2 w-12 h-12 p-1 mb-[0.75rem] bg-off-white rounded-full flex items-center justify-center cursor-pointer hover:rounded-2xl active:rounded-2xl transition-all duration-150 ease-in-out`}
-          >
-            <Image
-              src={SecondServer}
-              alt="Discord Logo"
-              width={26}
-              height={29}
-            />
-          </div>
-          <div
-            className={`server3 w-12 h-12 p-1 mb-[0.75rem] bg-off-white rounded-2xl flex items-center justify-center cursor-pointer hover:rounded-2xl active:rounded-2xl transition-all duration-250 ease-in-out`}
-          >
-            <Image
-              src={ThirdServer}
-              alt="Discord Logo"
-              width={26}
-              height={29}
-            />
-          </div>
-          <div
-            className={`icons w-12 h-12 p-1 mb-[0.75rem] bg-login-black text-status-green rounded-full flex items-center justify-center cursor-pointer hover:rounded-2xl hover:bg-status-green hover:text-off-white transition-all duration-250 ease-in-out`}
-          >
+          {
+            servers.map((server) => {
+              return (
+                <ServerButton key={server.id} btnText={server.btnText} type={server.type} className={server.activeClass ? `active` : ``}>
+                  <Image src={server.img} alt={server.btnText} width={26} height={29} />
+                </ServerButton>
+              )
+            })
+          }
+          <ServerButton type="discordBtn" btnText="Add a server">
             <AddIcon fontSize="medium" />
-          </div>
-          <div
-            className={`explore w-12 h-12 p-1 mb-[0.75rem] bg-login-black text-status-green rounded-full flex items-center justify-center cursor-pointer hover:rounded-2xl hover:bg-status-green hover:text-off-white transition-all duration-250 ease-in-out`}
-          >
+          </ServerButton>
+          <ServerButton type="discordBtn" btnText="Explore Public Servers">
             <ExploreIcon fontSize="medium" />
-          </div>
+          </ServerButton>
           <div className="flex items-center justify-center flex-col">
-            <span className="w-[1.925rem] h-[0.125rem] my-2 bg-login-black opacity-70" />
-            <div
-              className={`download w-12 h-12 p-1 bg-login-black text-status-green rounded-full flex items-center justify-center cursor-pointer hover:bg-status-green hover:text-off-white hover:rounded-2xl active:rounded-2xl transition-all duration-150 ease-in-out`}
-            >
+            <span className="w-[1.925rem] h-[0.125rem] mb-2 bg-login-black opacity-70" />
+            <ServerButton type="discordBtn" btnText="Download Discord">
               <FileDownloadOutlinedIcon fontSize="medium" />
-            </div>
+            </ServerButton>
           </div>
         </div>
       </div>
