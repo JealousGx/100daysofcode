@@ -21,7 +21,7 @@ interface serversType {
 const servers: serversType[] = [
   {
     id: 1,
-    btnText: "Jealous Server",
+    btnText: "✅ Jealous Server",
     img: ServerLogo,
     type: "server",
   },
@@ -47,7 +47,12 @@ const Index = ({ children }: any) => {
     <div className="w-screen h-screen flex flex-row">
       <div className="w-[4.5rem] h-full px-[0.75rem] py-[0.75rem] bg-black">
         <div className="flex items-center justify-center flex-col">
-          <ServerButton btnText="Home" type="home" onClick={() => setActiveTab(4)} className={activeTab === 4 ? 'active' : ''} >
+          <ServerButton
+            btnText="Home"
+            type="home"
+            onClick={() => setActiveTab(4)}
+            className={activeTab === 4 ? "active" : ""}
+          >
             <Image src={Logo} alt="Discord Logo" width={26} height={29} />
           </ServerButton>
           <span className="w-[1.925rem] h-[0.125rem] my-2 bg-login-black opacity-70" />
