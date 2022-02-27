@@ -4,6 +4,83 @@
 
 /* Homepage background: #404eed */
 
+@layer components {
+  .home {
+    @apply /* Adding cs for the status of the channel */
+    before:absolute before:content-[''] before:left-0 before:px-[0.13rem] before:py-[0.6rem] active:before:py-[1.25rem]
+    before:rounded-r-lg before:-translate-x-full before:scale-0 hover:before:scale-100 
+    hover:before:translate-x-0 hover:before:bg-off-white before:transition-all before:duration-[10] 
+    before:ease-linear;
+
+    /* Adding css for the label */
+    @apply after:absolute after:content-['Home'] after:left-[5rem] after:z-50 after:px-[0.75rem] after:py-[0.35rem] 
+    after:bg-black after:rounded-[0.3rem] after:text-off-white after:font-bold after:shadow-md after:scale-0 
+    hover:after:scale-100 after:transition-all after:duration-[10] after:ease-linear;
+  }
+
+  .server1 {
+    @apply /* Adding cs for the status of the channel */
+    before:absolute before:content-[''] before:left-0 before:px-[0.13rem] active:before:py-[1.25rem] before:py-[0.6rem] 
+    before:rounded-r-lg before:-translate-x-full before:scale-0 hover:before:scale-100 
+    hover:before:translate-x-0 hover:before:bg-off-white before:transition-all before:duration-[10] 
+    before:ease-linear;
+
+    /* Adding css for the label */
+    @apply after:absolute after:content-['✅\20Jealous\20Server'] after:left-[5rem] after:z-50 after:px-[0.75rem] after:py-[0.35rem] 
+    after:bg-black after:rounded-[0.3rem] after:text-off-white after:font-bold after:shadow-md after:scale-0 
+    hover:after:scale-100 after:transition-all after:duration-[10] after:ease-linear;
+  }
+
+  .server2 {
+    @apply /* Adding cs for the status of the channel */
+    before:absolute before:content-[''] before:left-0 before:px-[0.13rem] active:before:py-[1.25rem] before:py-[0.225rem] hover:before:py-[0.6rem]
+    before:rounded-r-lg before:bg-off-white before:transition-all before:duration-[10] 
+    before:ease-linear;
+
+    /* Adding css for the label */
+    @apply after:absolute after:content-['React\20Projects\20Help'] after:left-[5rem] after:z-50 after:px-[0.75rem] after:py-[0.35rem] 
+    after:bg-black after:rounded-[0.3rem] after:text-off-white after:font-bold after:shadow-md after:scale-0 
+    hover:after:scale-100 after:transition-all after:duration-[10] after:ease-linear;
+  }
+
+  .server3 {
+    @apply /* Adding cs for the status of the channel */
+    before:absolute before:content-[''] before:left-0 before:px-[0.13rem] before:py-[1.25rem]
+    before:rounded-r-lg before:bg-off-white before:transition-all before:duration-[10] 
+    before:ease-linear;
+
+    /* Adding css for the label */
+    @apply after:absolute after:content-['👋Football\20Updates'] after:left-[5rem] after:z-50 after:px-[0.75rem] after:py-[0.35rem] 
+    after:bg-black after:rounded-[0.3rem] after:text-off-white after:font-bold after:shadow-md after:scale-0 
+    hover:after:scale-100 after:transition-all after:duration-[10] after:ease-linear;
+  }
+
+  .icons {
+    @apply after:absolute after:content-['Add\20''a''\20server'] after:left-[5rem] after:z-50 after:px-[0.75rem] after:py-[0.35rem] 
+    after:bg-black after:rounded-[0.3rem] after:text-off-white after:font-bold after:shadow-md after:scale-0 
+    hover:after:scale-100 after:transition-all after:duration-[10] after:ease-linear;
+  }
+
+  .explore {
+    @apply after:absolute after:content-['Explore\20Public\20Servers'] after:left-[5rem] after:z-50 after:px-[0.75rem] after:py-[0.35rem] 
+    after:bg-black after:rounded-[0.3rem] after:text-off-white after:font-bold after:shadow-md after:scale-0 
+    hover:after:scale-100 after:transition-all after:duration-[10] after:ease-linear;
+  }
+
+  .download {
+    /* Adding cs for the status of the channel */
+    @apply before:absolute before:content-[''] before:left-0 before:px-[0.13rem] before:py-[0.6rem] active:before:py-[1.25rem]
+    before:rounded-r-lg before:-translate-x-full before:scale-0 hover:before:scale-100 
+    hover:before:translate-x-0 hover:before:bg-off-white before:transition-all before:duration-[10] 
+        before:ease-linear;
+
+    /* Adding css for the label */
+    @apply after:absolute after:content-['Download\20''Discord'] after:left-[5rem] after:z-50 after:px-[0.75rem] after:py-[0.35rem] 
+        after:bg-black after:rounded-[0.3rem] after:text-off-white after:font-bold after:shadow-md after:scale-0 
+        hover:after:scale-100 after:transition-all after:duration-[10] after:ease-linear;
+  }
+}
+
 @layer base {
   @font-face {
     font-family: GintoNord-Black;
