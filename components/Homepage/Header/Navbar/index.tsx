@@ -5,6 +5,7 @@ import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 import hamburger from "../../../assets/hamburger.svg"
 import logo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_white_RGB.svg"
 import darkLogo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_black_RGB.svg"
+import Link from "next/link"
 
 const Navbar: React.FC = () => {
   const [displayNav, setDisplayNav] = useState<boolean>(false)
@@ -47,7 +48,7 @@ const Navbar: React.FC = () => {
       </div>
       <div className="right-wrapper h-full flex flex-row items-center justify-center">
         <div className="py-2 px-4 font-semibold text-sm rounded-3xl hover:shadow-xl hover:text-blurple transition-all duration-200 ease-linear bg-white cursor-pointer mr-4">
-          Login
+          <Link href="/auth/login">Login</Link>
         </div>
         <div className="hamburger sm:block lg:hidden">
           <Image

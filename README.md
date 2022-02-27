@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://jealousgx-discord.netlify.app">
+    <a href="https://jealous-discord.netlify.app">
       Demo
     </a>
     <span> | </span>

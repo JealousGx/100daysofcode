@@ -7,6 +7,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import Logo from "../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_white_RGB.png"
 import USAFlag from "../../assets/usa_flag.png"
+import Link from "next/link"
 
 const Footer: React.FC = () => {
   const gotoTop = () => {
@@ -131,7 +132,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="btn">
           <button className="text-center sm:py-[0.4rem] sm:px-4 py-[0.8vw] px-[4vw] capitalize font-medium text-sm text-white rounded-3xl bg-blurple hover:bg-[#717dff] hover:shadow-xl transition-all duration-200 ease-in">
-            Open Discord
+            <Link href="/auth/register">Sign Up</Link>
           </button>
         </div>
       </div>
