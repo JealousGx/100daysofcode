@@ -1,14 +1,13 @@
-import Image from "next/image";
-import React, { useState } from "react";
+import Image from "next/image"
+import React, { useState } from "react"
 
 import Logo from "../../assets/Discord-Logo-White.png"
 import AddIcon from "@mui/icons-material/Add"
 import ExploreIcon from "@mui/icons-material/Explore"
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 
-import { servers } from './data';
+import { servers } from "./data"
 import { ServerButton } from "./styles"
-
 
 const Index = ({ children }: any) => {
   const [activeTab, setActiveTab] = useState<number>(0)
