@@ -1,44 +1,14 @@
-import Image from "next/image"
-import React, { useState } from "react"
+import Image from "next/image";
+import React, { useState } from "react";
+
 import Logo from "../../assets/Discord-Logo-White.png"
-import ServerLogo from "../../assets/server_logo.png"
-import SecondServer from "../../assets/server2.png"
-import ThirdServer from "../../assets/server3.png"
 import AddIcon from "@mui/icons-material/Add"
 import ExploreIcon from "@mui/icons-material/Explore"
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 
+import { servers } from './data';
 import { ServerButton } from "./styles"
 
-interface serversType {
-  id: number
-  btnText: string
-  img: StaticImageData
-  type: string
-  activeClass?: boolean | false
-}
-
-const servers: serversType[] = [
-  {
-    id: 1,
-    btnText: "✅ Jealous Server",
-    img: ServerLogo,
-    type: "server",
-  },
-  {
-    id: 2,
-    btnText: "Web Development Help",
-    img: SecondServer,
-    type: "server",
-  },
-  {
-    id: 3,
-    btnText: "👋 Football Updates",
-    img: ThirdServer,
-    type: "server",
-    activeClass: true,
-  },
-]
 
 const Index = ({ children }: any) => {
   const [activeTab, setActiveTab] = useState<number>(0)

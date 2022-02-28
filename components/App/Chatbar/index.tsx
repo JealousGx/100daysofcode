@@ -1,7 +1,7 @@
 import React from "react"
 
 const Index = () => {
-  return <div>Chatbar</div>
+  return <div className="w-[80%] bg-login-black">Chatbar</div>
 }
 
 export default Index

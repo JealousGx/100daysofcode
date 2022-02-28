@@ -43,6 +43,8 @@ module.exports = {
         "info-text": "#b9bbbe", // Info Text Color
         label: "#dcddde", // Label Text Color
         input: "#202225", // Input Background Color
+        "statusbar-bg": "#2f3136",
+        "statusbar-rank": "#8e9297",
       },
       fontSize: {
         sm: "0.875rem",
