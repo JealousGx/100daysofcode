@@ -28,6 +28,5 @@ export const servers: serversType[] = [
     btnText: "👋 Football Updates",
     img: ThirdServer,
     type: "server",
-    activeClass: true,
   },
 ]

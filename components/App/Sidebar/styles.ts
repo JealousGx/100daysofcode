@@ -6,6 +6,33 @@ type Button = {
   className?: string | null
 }
 
+export const SidebarContainer = styled.div`
+  width: 4.5rem;
+  height: 100%;
+  padding: 0.75rem;
+  background: rgb(35, 39, 42);
+
+  z-index: 50;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0.01rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+`
+
 export const ServerButton = styled.div<Button>`
   width: 3rem;
   height: 3rem;
@@ -24,6 +51,9 @@ export const ServerButton = styled.div<Button>`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
   transition: all 150ms ease;
 
   ${({ btnText }) =>
@@ -32,7 +62,7 @@ export const ServerButton = styled.div<Button>`
     &:before {
       position: absolute;
       content: '';
-      left: 0;
+      left: 0rem;
       padding: 0.6rem 0.13rem;
       border-top-right-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
@@ -44,8 +74,8 @@ export const ServerButton = styled.div<Button>`
   &:after {
     position: absolute;
     content: "${({ btnText }) => btnText}";
-    left: 5rem;
-    z-index: 50;
+    left: 4.75rem;
+    z-index: 100;
     padding: 0.35rem 0.75rem;
     background-color: rgb(35, 39, 42);
     border-radius: 0.3rem;
@@ -53,6 +83,7 @@ export const ServerButton = styled.div<Button>`
     font-weight: 700;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -2px rgba(0, 0, 0, 0.1);
+
     transform: scaleX(0) scaleY(0);
     transition: all 150ms ease;
   }

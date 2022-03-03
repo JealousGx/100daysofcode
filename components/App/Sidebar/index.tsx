@@ -7,20 +7,20 @@ import ExploreIcon from "@mui/icons-material/Explore"
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 
 import { servers } from "./data"
-import { ServerButton } from "./styles"
+import { ServerButton, SidebarContainer } from "./styles"
 
 const Index = ({ children }: any) => {
   const [activeTab, setActiveTab] = useState<number>(0)
 
   return (
     <div className="w-screen h-screen flex flex-row">
-      <div className="w-[4.5rem] h-full px-[0.75rem] py-[0.75rem] bg-black">
+      <SidebarContainer>
         <div className="flex items-center justify-center flex-col">
           <ServerButton
             btnText="Home"
             type="home"
-            onClick={() => setActiveTab(4)}
-            className={activeTab === 4 ? "active" : ""}
+            onClick={() => setActiveTab(servers.length + 1)}
+            className={activeTab === servers.length + 1 ? "active" : ""}
           >
             <Image src={Logo} alt="Discord Logo" width={26} height={29} />
           </ServerButton>
@@ -58,7 +58,7 @@ const Index = ({ children }: any) => {
             </ServerButton>
           </div>
         </div>
-      </div>
+      </SidebarContainer>
       {children}
     </div>
   )
