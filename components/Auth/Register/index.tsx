@@ -87,7 +87,7 @@ const Index = () => {
       <div className="h-screen w-screen flex items-center justify-center bg-[url('../components/assets/login_bg.svg')] bg-cover">
         <div
           data-aos="fade-down"
-          className="container px-5 md:w-[30rem] w-screen md:h-[35rem] h-screen flex md:flex-row md:gap-10 bg-login-black shadow-xl md:rounded-[0.275rem]"
+          className="container px-5 md:w-[30rem] w-screen md:h-[35rem] h-screen flex md:flex-row md:gap-10 bg-login-black shadow-xl md:rounded-[0.275rem] overflow-hidden"
         >
           <div className="flex items-center justify-center flex-col grow-[3] px-3">
             <h1 className="text-[#ffffff] text-[1.5rem] font-heading-2 font-normal">
@@ -101,8 +101,8 @@ const Index = () => {
                 <li className="flex flex-col py-[0.375rem]">
                   <div className="labels flex flex-row">
                     <label
-                      className={`text-info-text uppercase text-sm font-extrabold pb-[0.3rem] ${
-                        errors.email && `text-red`
+                      className={`uppercase text-sm font-extrabold pb-[0.3rem] ${
+                        errors.email ? `text-red` : `text-info-text`
                       }`}
                     >
                       email{" "}
@@ -119,7 +119,7 @@ const Index = () => {
                       required: "This field is required",
                     })}
                     autoComplete="off"
-                    className={`mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.75px] border-solid border-[#000000] ${
+                    className={`w-full mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.75px] border-solid border-[#000000] ${
                       errors.email &&
                       `border-red focus:border-red border-opacity-100`
                     } border-opacity-40 hover:border-opacity-100 focus:border-hyperlink transition-all duration-250 ease-linear`}
@@ -128,8 +128,8 @@ const Index = () => {
                 <li className="flex flex-col py-[0.375rem]">
                   <div className="labels flex flex-row">
                     <label
-                      className={`text-info-text uppercase text-sm font-extrabold pb-[0.3rem] ${
-                        errors.username && `text-red`
+                      className={`uppercase text-sm font-extrabold pb-[0.3rem] ${
+                        errors.username ? `text-red` : `text-info-text`
                       }`}
                     >
                       username{" "}
@@ -155,8 +155,8 @@ const Index = () => {
                 <li className="flex flex-col py-[0.375rem]">
                   <div className="labels flex flex-row">
                     <label
-                      className={`text-info-text uppercase text-sm font-extrabold pb-[0.3rem] ${
-                        errors.password && `text-red`
+                      className={`uppercase text-sm font-extrabold pb-[0.3rem] ${
+                        errors.password ? `text-red` : `text-info-text`
                       }`}
                     >
                       password{" "}

@@ -10,7 +10,7 @@ import { servers } from "./data"
 import { ServerButton, SidebarContainer } from "./styles"
 
 const Index = ({ children }: any) => {
-  const [activeTab, setActiveTab] = useState<number>(0)
+  const [activeTab, setActiveTab] = useState<number>(servers.length + 1)
 
   return (
     <div className="w-screen h-screen flex flex-row">

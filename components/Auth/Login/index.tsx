@@ -57,8 +57,8 @@ const Index = () => {
                 <li className="flex flex-col py-[0.375rem]">
                   <div className="labels flex flex-row">
                     <label
-                      className={`text-info-text uppercase text-sm font-extrabold pb-[0.3rem] ${
-                        errors.email && `text-red`
+                      className={` uppercase text-sm font-extrabold pb-[0.3rem] ${
+                        errors.email ? `text-red` : `text-info-text`
                       }`}
                     >
                       email{" "}
@@ -86,8 +86,8 @@ const Index = () => {
                 <li className="flex flex-col pt-[0.375rem]">
                   <div className="labels flex flex-row">
                     <label
-                      className={`text-info-text uppercase text-sm font-extrabold pb-[0.3rem] ${
-                        errors.password && `text-red`
+                      className={`uppercase text-sm font-extrabold pb-[0.3rem] ${
+                        errors.password ? `text-red` : `text-info-text`
                       }`}
                     >
                       password{" "}

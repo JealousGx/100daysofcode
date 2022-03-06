@@ -11,8 +11,6 @@ export const SidebarContainer = styled.div`
   height: 100%;
   padding: 0.75rem;
   background: rgb(35, 39, 42);
-
-  z-index: 50;
   overflow-x: hidden;
   overflow-y: scroll;
 
