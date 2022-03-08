@@ -108,7 +108,7 @@ const Index = () => {
                             </span>
                           </span>
                           {user.status !== "offline" && (
-                            <span className="ml-4 text-[0.75rem] text-off-white">
+                            <span className="absolute top-3 right-4 ml-4 text-[0.75rem] text-green">
                               Online
                             </span>
                           )}

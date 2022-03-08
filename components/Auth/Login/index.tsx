@@ -40,7 +40,7 @@ const Index = () => {
       <div className="h-screen w-screen flex items-center justify-center bg-[url('../components/assets/login_bg.svg')] bg-cover">
         <div
           data-aos="fade-down"
-          className="container p-6 pb-[2rem] md:w-[50rem] w-screen md:h-[26rem] h-screen flex md:flex-row md:gap-10 bg-login-black shadow-xl md:rounded-[0.275rem]"
+          className="container p-6 pb-[2rem] md:w-[50rem] w-screen md:h-[26rem] h-screen flex md:flex-row md:gap-10 bg-login-black shadow-xl md:rounded-[0.275rem] overflow-hidden"
         >
           <div className="flex items-center justify-center flex-col grow-[3] px-3">
             <h1 className="text-[#ffffff] text-[1.5rem] font-heading-2 font-normal">

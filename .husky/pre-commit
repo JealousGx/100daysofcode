@@ -10,7 +10,7 @@ npm run check-format ||
 (
     echo '🤢🤮🤢🤮 Its FOKING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
             Prettier Check Failed. Running npm run format & adding changes.';
-    npm run format;
+    false;
 )
 
 # Check ESLint Standards

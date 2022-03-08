@@ -97,7 +97,8 @@ export const ProfileCard = styled.div<ProfileCardType>`
 
 export const Input = styled.input`
   width: 100%;
-  padding: 0.6rem;
+  margin-top: 0.8rem;
+  padding: 0.4rem 0.6rem;
   background-color: #303339;
   color: #f6f6f6;
   outline: none;
