@@ -108,15 +108,16 @@ const Index = () => {
                             </span>
                           </span>
                           {user.status !== "offline" && (
-                            <span className="absolute top-3 right-4 ml-4 text-[0.75rem] text-green">
+                            <span className="absolute top-3 right-4 flex flex-row items-center ml-4 text-[0.75rem] text-green">
+                              <div className="w-2 h-2 rounded-full bg-green mr-2" />
                               Online
                             </span>
                           )}
                         </div>
                         <div>
-                          <p className="w-full h-10 whitespace-nowrap text-gray-400 text-lg">
+                          <p className="w-full h-10 whitespace-nowrap text-gray-400 text-[1rem]">
                             Bio:{" "}
-                            <span className="text-sm text-gray-500">
+                            <span className="text-[0.775rem] text-gray-500">
                               {user.bio}
                             </span>
                           </p>

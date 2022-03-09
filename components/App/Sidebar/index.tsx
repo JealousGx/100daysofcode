@@ -9,7 +9,7 @@ import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 import { servers } from "./data"
 import { ServerButton, SidebarContainer } from "./styles"
 
-const Index = ({ children }: any) => {
+const Index: React.FC = ({ children }) => {
   const [activeTab, setActiveTab] = useState<number>(servers.length + 1)
 
   return (

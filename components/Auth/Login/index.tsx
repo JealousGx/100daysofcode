@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import qrCode from "../../assets/qr_code.png"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 interface IFormValues {
   email: string
@@ -18,6 +19,7 @@ const Index = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormValues>()
+  const router = useRouter()
 
   useEffect(() => {
     AOS.init({
@@ -30,6 +32,7 @@ const Index = () => {
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     console.log(data)
+    router.push("/channels/channel")
   }
 
   return (

@@ -1,10 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Head from "next/head"
 import Link from "next/link"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { DOB } from "./dob"
+import { useRouter } from "next/router"
 
 type IFormValues = {
   email: string
@@ -22,6 +23,9 @@ const Index = () => {
     formState: { errors },
   } = useForm<IFormValues>()
 
+  const router = useRouter()
+  const [loading, setLoading] = useState<boolean>(false)
+
   useEffect(() => {
     AOS.init({
       offset: 500,
@@ -33,6 +37,9 @@ const Index = () => {
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     console.log(data)
+    router.push("/channels/channel")
+    setLoading(true)
+
     const now = new Date()
     getAllDaysInMonth(now.getFullYear(), now.getMonth())
   }

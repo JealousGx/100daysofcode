@@ -1,9 +1,35 @@
 import React from "react"
-import { ChatbarContainer } from "./styles"
+import Image from "next/image"
+import {
+  ChatbarContainer,
+  ChannelContainer,
+  ChannelInfo,
+  Channels,
+} from "./styles"
+
+import Hash from "../../assets/hash.png"
+import { serverData } from "./data"
 
 const Index = () => {
   return (
     <ChatbarContainer>
+      <ChannelContainer>
+        <ChannelInfo>
+          <h1 className="pt-8 pb-4 font-heading-2 text-xl tracking-wide text-center text-off-white">
+            Jealous
+          </h1>
+          <p className="px-4 font-heading-2 text-[0.775rem] tracking-wide text-center text-off-white">
+            Server for fun!
+            <br /> Enjoy your stay here.
+          </p>
+        </ChannelInfo>
+        <Channels>
+          <div>
+            <Image src={Hash} alt="Hash" className="text-gray-text" />
+          </div>
+          {/* TODO: Map through the data and render the categories and the respective channels */}
+        </Channels>
+      </ChannelContainer>
       <div>
         Chatbar Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
         perspiciatis repudiandae quam, modi at cumque. Quae doloremque illum,
