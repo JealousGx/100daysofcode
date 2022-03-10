@@ -1,16 +1,31 @@
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image"
 import {
   ChatbarContainer,
   ChannelContainer,
   ChannelInfo,
   Channels,
+  Channel,
 } from "./styles"
 
-import Hash from "../../assets/hash.png"
+import TagIcon from "@mui/icons-material/Tag"
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"
+import VolumeUpIcon from "@mui/icons-material/VolumeUp"
 import { serverData } from "./data"
 
 const Index = () => {
+  const [displayCategoryChannels, setDisplayCategoryChannels] =
+    useState<string>("")
+  const [activeChannel, setActiveChannel] = useState<number>()
+
+  const handleCategoryChannels = (category: string) => {
+    if (displayCategoryChannels === category) {
+      setDisplayCategoryChannels("")
+    } else {
+      setDisplayCategoryChannels(category)
+    }
+  }
+
   return (
     <ChatbarContainer>
       <ChannelContainer>
@@ -24,10 +39,45 @@ const Index = () => {
           </p>
         </ChannelInfo>
         <Channels>
-          <div>
-            <Image src={Hash} alt="Hash" className="text-gray-text" />
-          </div>
-          {/* TODO: Map through the data and render the categories and the respective channels */}
+          {serverData.categories.map((category, index) => {
+            return (
+              <div key={index}>
+                <div
+                  className="pt-3 flex items-center uppercase cursor-pointer hover:text-[#DCDDDE]"
+                  onClick={() => handleCategoryChannels(category)}
+                >
+                  <ArrowDropDownIcon
+                    className={`font-[0.25rem] ${
+                      displayCategoryChannels === category && `-rotate-90`
+                    } transition-transform duration-250ms ease-linear`}
+                  />
+                  <p className="text-sm">{category}</p>
+                </div>
+                {serverData.channels.map((channel) => {
+                  return (
+                    channel.category === category &&
+                    !(displayCategoryChannels === category) && (
+                      <Channel
+                        type={channel.category}
+                        onClick={() => setActiveChannel(channel.id)}
+                        className={`${
+                          activeChannel === channel.id && `active`
+                        }`}
+                      >
+                        {channel.category === "voice-chat" ? (
+                          <VolumeUpIcon />
+                        ) : (
+                          <TagIcon className="-skew-x-[8deg]" />
+                        )}
+                        {channel.title}
+                      </Channel>
+                    )
+                  )
+                })}
+              </div>
+            )
+          })}
+          <div></div>
         </Channels>
       </ChannelContainer>
       <div>

@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+interface Channel {
+  type: string
+}
+
 export const ChatbarContainer = styled.div`
   width: 80vw;
   height: 100vh;
@@ -41,11 +45,35 @@ export const ChannelContainer = styled.section`
   height: 100vh;
   min-width: 210px;
   background-color: #2f3136;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 0.35rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background: #23272a;
+    }
+  }
 `
 
 export const ChannelInfo = styled.div`
+  margin: 0 0.35rem;
   width: 100%;
   height: 9rem;
   border: none;
@@ -61,5 +89,43 @@ export const ChannelInfo = styled.div`
 `
 
 export const Channels = styled.div`
-  margin-top: 2rem;
+  padding: 0.5rem 0.25rem;
+  color: rgb(114 118 125);
+`
+
+export const Channel = styled.div<Channel>`
+  width: 100%;
+  padding: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0.3rem;
+
+  ${({ type }) =>
+    type !== "voice-chat" &&
+    `&:before {
+    content: '';
+    position: absolute;
+    top: 0.8rem;
+    left: -0.25rem;
+    width: 0.25rem;
+    height: 0.4rem;
+    background: whitesmoke;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+  }`}
+
+  &:hover {
+    background-color: #34373c;
+    color: #dcddde;
+  }
+
+  &.active {
+    color: #dcddde;
+
+    &:before {
+      display: block;
+    }
+  }
 `
