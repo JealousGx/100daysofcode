@@ -129,3 +129,15 @@ export const Channel = styled.div<Channel>`
     }
   }
 `
+
+export const UserControls = styled.div`
+  position: absolute;
+  left: 4.5rem;
+  bottom: 0;
+  width: 210px;
+  height: 3.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #292b2f;
+`

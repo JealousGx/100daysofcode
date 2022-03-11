@@ -6,8 +6,10 @@ import {
   ChannelInfo,
   Channels,
   Channel,
+  UserControls,
 } from "./styles"
 
+import Logo from "../../assets/Discord-Logo-White.png"
 import TagIcon from "@mui/icons-material/Tag"
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"
 import VolumeUpIcon from "@mui/icons-material/VolumeUp"
@@ -77,7 +79,19 @@ const Index = () => {
               </div>
             )
           })}
-          <div></div>
+          {/* User Controls: */}
+          {/* TODO: After implementing the backend, change the profile and the user (id) according to the logged in user */}
+          <UserControls>
+            <div className="w-8 h-8 p-[0.4rem] mr-2 bg-blue-600 hover:opacity-70 cursor-pointer flex items-center justify-center rounded-full group-hover:opacity-100">
+              <Image src={Logo} alt="Profile Logo" width={20} height={20} />
+            </div>
+            <div className="flex flex-col leading-[1rem] text-white tracking-wide font-bold cursor-pointer">
+              Jealous
+              <span className="text-[#b9bbbe] text-[0.675rem] font-normal">
+                #0000
+              </span>
+            </div>
+          </UserControls>
         </Channels>
       </ChannelContainer>
       <div>
