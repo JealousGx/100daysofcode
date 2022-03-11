@@ -136,8 +136,12 @@ export const UserControls = styled.div`
   bottom: 0;
   width: 210px;
   height: 3.5rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   display: flex;
   align-items: center;
   background-color: #292b2f;
+
+  @media (min-width: 1660px) {
+    left: 4.3rem;
+  }
 `

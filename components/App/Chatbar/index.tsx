@@ -53,7 +53,7 @@ const Index = () => {
                       displayCategoryChannels === category && `-rotate-90`
                     } transition-transform duration-250ms ease-linear`}
                   />
-                  <p className="text-sm">{category}</p>
+                  <p className="text-sm font-bold">{category}</p>
                 </div>
                 {serverData.channels.map((channel) => {
                   return (
