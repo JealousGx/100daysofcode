@@ -34,6 +34,7 @@ module.exports = {
         yellow: "#FEE75C",
         red: "#ED4245",
         white: "#FFFFFF",
+        "msg-white": "#D1D0B4", // Message White
         black: "#23272A",
         "hover-black": "#23272ab3",
         "login-black": "#36393F", // Login Container Color

@@ -87,3 +87,12 @@ export const serverData: dataType = {
   ],
   categories: ["important", "community", "voice-chat"],
 }
+
+export const ChatData = [
+  {
+    id: 1,
+    name: "Jealous",
+    sentAt: "Today at 3:45 PM",
+    msg: "Lorem ipsum dolor sit amet.",
+  },
+]
