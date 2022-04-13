@@ -46,6 +46,9 @@ module.exports = {
         input: "#202225", // Input Background Color
         "statusbar-bg": "#2f3136",
         "statusbar-rank": "#8e9297",
+        user1: "rgb(254, 215, 170)",
+        user2: "rgb(2, 132, 199)",
+        user3: "rgb(254, 231, 92)",
       },
       fontSize: {
         sm: "0.875rem",
