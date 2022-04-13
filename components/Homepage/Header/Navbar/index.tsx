@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <div className="xl:px-[20vw] lg:px-[5rem] min-w-full flex items-center justify-between">
+    <div className="container xl:px-[20vw] lg:px-[5rem] min-w-full flex items-center justify-between">
       <Image
         src={logo}
         alt="Discord Logo"
