@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Image from "next/image"
+import Settings from "./Settings"
 import {
   ChannelContainer,
   ChannelInfo,
@@ -11,6 +12,7 @@ import {
 import Logo from "../../../assets/Discord-Logo-White.png"
 import TagIcon from "@mui/icons-material/Tag"
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"
+import SettingsIcon from "@mui/icons-material/Settings"
 import VolumeUpIcon from "@mui/icons-material/VolumeUp"
 import { serverData } from "./data"
 
@@ -18,6 +20,7 @@ const ChannelsContainer = () => {
   const [activeChannel, setActiveChannel] = useState<number>()
   const [displayCategoryChannels, setDisplayCategoryChannels] =
     useState<string>("")
+  const [displaySettings, setDisplaySettings] = useState<boolean>(false)
 
   const handleCategoryChannels = (category: string) => {
     if (displayCategoryChannels === category) {
@@ -29,6 +32,12 @@ const ChannelsContainer = () => {
 
   return (
     <ChannelContainer>
+      {displaySettings && (
+        <Settings
+          displaySettings={displaySettings}
+          setDisplaySettings={setDisplaySettings}
+        />
+      )}
       <ChannelInfo>
         <h1 className="pt-8 pb-4 font-heading-2 text-xl tracking-wide text-center text-off-white">
           Jealous
@@ -79,15 +88,21 @@ const ChannelsContainer = () => {
         {/* User Controls: */}
         {/* TODO: After implementing the backend, change the profile and the user (id) according to the logged in user */}
         <UserControls>
-          <div className="w-8 h-8 p-[0.4rem] mr-2 bg-blue-600 hover:opacity-70 cursor-pointer flex items-center justify-center rounded-full group-hover:opacity-100">
-            <Image src={Logo} alt="Profile Logo" width={20} height={20} />
+          <div className="flex">
+            <div className="w-8 h-8 p-[0.4rem] mr-2 bg-blue-600 hover:opacity-70 cursor-pointer flex items-center justify-center rounded-full group-hover:opacity-100">
+              <Image src={Logo} alt="Profile Logo" width={20} height={20} />
+            </div>
+            <div className="flex flex-col leading-[1rem] text-white tracking-wide font-bold cursor-pointer">
+              Jealous
+              <span className="text-[#b9bbbe] text-[0.675rem] font-normal">
+                #0000
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col leading-[1rem] text-white tracking-wide font-bold cursor-pointer">
-            Jealous
-            <span className="text-[#b9bbbe] text-[0.675rem] font-normal">
-              #0000
-            </span>
-          </div>
+          <SettingsIcon
+            className="text-white cursor-pointer"
+            onClick={() => setDisplaySettings(!displaySettings)}
+          />
         </UserControls>
       </Channels>
     </ChannelContainer>

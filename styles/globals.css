@@ -24,3 +24,7 @@
 * {
   @apply font-body;
 }
+
+textarea {
+  resize: none;
+}

@@ -39,7 +39,7 @@ const Index = () => {
         })}
       </Messages>
       <FormContainer>
-        <Form action="">
+        <Form>
           {/* TODO: Change the placeholder below dynamically */}
           <Input type="text" placeholder="Message #general" />
         </Form>

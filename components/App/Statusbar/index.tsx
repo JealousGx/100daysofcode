@@ -5,11 +5,6 @@ import Logo from "../../assets/Discord-Logo-White.png"
 import { data } from "./data"
 import { StatusContainer, Profile, ProfileCard, Input } from "./styles"
 
-interface usersType {
-  name: string
-  rank: string
-}
-
 const Index = () => {
   const [activeProfile, setActiveProfile] = useState<number>(0)
   const profileRef = useRef<any>()
