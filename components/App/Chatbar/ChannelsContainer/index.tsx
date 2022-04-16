@@ -32,6 +32,7 @@ const ChannelsContainer = () => {
 
   return (
     <ChannelContainer>
+      {/* User Control Panel (User Account Settings Component) */}
       {displaySettings && (
         <Settings
           displaySettings={displaySettings}
@@ -99,10 +100,12 @@ const ChannelsContainer = () => {
               </span>
             </div>
           </div>
-          <SettingsIcon
-            className="text-white cursor-pointer"
-            onClick={() => setDisplaySettings(!displaySettings)}
-          />
+          <div className="p-1 hover:bg-[#42464D] rounded-[0.1875rem] transition-all ease-linear duration-[25ms]">
+            <SettingsIcon
+              className="text-white cursor-pointer"
+              onClick={() => setDisplaySettings(!displaySettings)}
+            />
+          </div>
         </UserControls>
       </Channels>
     </ChannelContainer>

@@ -167,8 +167,40 @@ export const ProfilePictureContainer = styled.div`
   width: 100%;
   height: 10rem;
   margin: 1rem 0;
-  background: #202225;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+  /* background: #202225; */
   border-radius: 0.5rem;
+`
+
+export const UserPictureWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+`
+
+export const InputWrapper = styled.div`
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  border: dashed 0.3rem #202225;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`
+
+export const Input = styled.input`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  outline: none;
 `
 
 export const Button = styled.button<ButtonType>`
@@ -188,4 +220,8 @@ export const Button = styled.button<ButtonType>`
     ${({ saveProfile }) =>
       saveProfile ? "background: #4752C4;" : "background: rgb(237 66 69);"}
   }
+`
+
+export const Textarea = styled.textarea`
+  resize: none;
 `

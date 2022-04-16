@@ -1,14 +1,25 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
+import { useDropzone } from "react-dropzone"
 
 import {
   SettingsContainer,
   SettingsWrapper,
   ProfilePictureContainer,
+  UserPictureWrapper,
+  InputWrapper,
+  Input,
+  Textarea,
   Button,
 } from "./styles"
 
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded"
+import Image from "next/image"
+import UserAvatar from "../UserAvatar"
+
+type PreviewType = {
+  preview: string
+}
 
 type IFormValues = {
   email: string
@@ -23,8 +34,26 @@ const Settings = (props: any) => {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormValues>()
+  type picType = File & { preview: string }
   const settingsRef = useRef<any>()
   const { setDisplaySettings, displaySettings } = props
+  const [userPictures, setUserPictures] = useState<picType[]>([])
+
+  // Configuring Dropzone to select only one file of type image and setting that file through setUserPicture
+  const { getRootProps, getInputProps } = useDropzone({
+    multiple: false,
+    accept: "image/*",
+    onDrop: (images: any) => {
+      setUserPictures(
+        // Creating a preview of the image
+        images.map((image: any) =>
+          Object.assign(image, {
+            preview: URL.createObjectURL(image),
+          })
+        )
+      )
+    },
+  })
 
   // Click outside the Wrapper to close settings container
   useEffect(() => {
@@ -55,7 +84,38 @@ const Settings = (props: any) => {
           <p className="text-xl font-bold">My Account</p>
         </div>
         {/* Modify the ProfilePictureContainer after watching the tutorial of drag & drop image uploader */}
-        <ProfilePictureContainer />
+        <ProfilePictureContainer>
+          <UserPictureWrapper>
+            {userPictures.length !== 0 ? (
+              userPictures.map((userPicture, id) => (
+                <Image
+                  key={id}
+                  className="rounded-full"
+                  src={userPicture.preview}
+                  alt={userPicture.name}
+                  width={120}
+                  height={120}
+                />
+                // console.log(userPicture)
+              ))
+            ) : (
+              <UserAvatar bgColor="#5d8aa8" />
+            )}
+            {/* Edit and modify the name and the hash tag according to the user after implementing API */}
+            <p className="text-off-white font-bold text-2xl">
+              Jealous<span className="text-gray-text text-xl">#0000</span>
+            </p>
+          </UserPictureWrapper>
+          <InputWrapper {...getRootProps()}>
+            <Input
+              {...getInputProps()}
+              onChange={() => console.log(userPictures)}
+            />
+            <p className="p-4 text-lg italic text-info-text opacity-40">
+              Drag &apos;n&apos; drop profile picture here, or click to select
+            </p>
+          </InputWrapper>
+        </ProfilePictureContainer>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -168,7 +228,7 @@ const Settings = (props: any) => {
                   )}
                 </label>
               </div>
-              <textarea
+              <Textarea
                 cols={4}
                 {...register("bio")}
                 // Change the defaultValue dynamically after implementing the API
