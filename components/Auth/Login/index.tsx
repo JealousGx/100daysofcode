@@ -1,12 +1,16 @@
 import Head from "next/head"
 import React, { useEffect } from "react"
+import { useRouter } from "next/router"
+import Image from "next/image"
+import Link from "next/link"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import { SubmitHandler, useForm } from "react-hook-form"
+
+import { useAppSelector, useAppDispatch } from "../../../redux/hooks"
+import { login } from "../../../redux/Reducers/userReducer"
+
 import qrCode from "../../assets/qr_code.png"
-import Image from "next/image"
-import Link from "next/link"
-import { useRouter } from "next/router"
 
 interface IFormValues {
   email: string
@@ -19,6 +23,8 @@ const Index = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormValues>()
+
+  const dispatch = useAppDispatch()
   const router = useRouter()
 
   useEffect(() => {
@@ -32,7 +38,13 @@ const Index = () => {
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     console.log(data)
-    router.push("/channels/channel")
+    router.push("/channels/@me")
+
+    dispatch(
+      login({
+        loggedIn: true,
+      })
+    )
   }
 
   return (

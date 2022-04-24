@@ -1,24 +1,17 @@
 import React, { useState } from "react"
 import Head from "next/head"
-import Image from "next/image"
 import { useRouter } from "next/router"
 
+import UserControlsWrapper from "./UserControls"
 import Settings from "./Settings"
-import {
-  ChannelContainer,
-  ChannelInfo,
-  Channels,
-  Channel,
-  UserControls,
-} from "./styles"
+import { ChannelContainer, ChannelInfo, Channels, Channel } from "./styles"
 import { servers } from "../../data"
 
-import { useAppSelector } from "../../../../redux/hooks"
+import { useAppSelector, useAppDispatch } from "../../../../redux/hooks"
+import { setChannel } from "../../../../redux/Reducers/channelReducer"
 
-import Logo from "../../../assets/Discord-Logo-White.png"
 import TagIcon from "@mui/icons-material/Tag"
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"
-import SettingsIcon from "@mui/icons-material/Settings"
 import VolumeUpIcon from "@mui/icons-material/VolumeUp"
 
 const ChannelsContainer: React.FC = (): JSX.Element => {
@@ -29,6 +22,7 @@ const ChannelsContainer: React.FC = (): JSX.Element => {
   const [displaySettings, setDisplaySettings] = useState<boolean>(false)
 
   const router = useRouter()
+  const dispatch = useAppDispatch()
 
   // Get active server name
   const activeServer = useAppSelector((state) => state.server.serverName)
@@ -47,8 +41,15 @@ const ChannelsContainer: React.FC = (): JSX.Element => {
   }
 
   const handleChannel = (id: number, name: string) => {
+    dispatch(
+      setChannel({
+        channelID: id,
+        channelName: name,
+      })
+    )
     setActiveChannelName(name)
     setActiveChannel(id)
+
     router.push(`/channels/${id}`)
   }
 
@@ -121,25 +122,10 @@ const ChannelsContainer: React.FC = (): JSX.Element => {
             )}
           {/* User Controls: */}
           {/* TODO: After implementing the backend, change the profile and the user (id) according to the logged in user */}
-          <UserControls>
-            <div className="flex">
-              <div className="w-8 h-8 p-[0.4rem] mr-2 bg-blue-600 hover:opacity-70 cursor-pointer flex items-center justify-center rounded-full group-hover:opacity-100">
-                <Image src={Logo} alt="Profile Logo" width={20} height={20} />
-              </div>
-              <div className="flex flex-col leading-[1rem] text-white tracking-wide font-bold cursor-pointer">
-                Jealous
-                <span className="text-[#b9bbbe] text-[0.675rem] font-normal">
-                  #0000
-                </span>
-              </div>
-            </div>
-            <div className="p-1 hover:bg-[#42464D] rounded-[0.1875rem] transition-all ease-linear duration-[25ms]">
-              <SettingsIcon
-                className="text-white cursor-pointer"
-                onClick={() => setDisplaySettings(!displaySettings)}
-              />
-            </div>
-          </UserControls>
+          <UserControlsWrapper
+            setDisplaySettings={setDisplaySettings}
+            displaySettings={displaySettings}
+          />
         </Channels>
       </ChannelContainer>
     </>

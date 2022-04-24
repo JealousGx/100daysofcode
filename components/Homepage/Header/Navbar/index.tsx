@@ -1,14 +1,21 @@
 import Image from "next/image"
 import React, { useState } from "react"
+import Link from "next/link"
+import { useRouter as router } from "next/router"
+
+import { useAppSelector } from "../../../../redux/hooks"
+import { selectUserLogged } from "../../../../redux/Reducers/userReducer"
+
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
 import hamburger from "../../../assets/hamburger.svg"
 import logo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_white_RGB.svg"
 import darkLogo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_black_RGB.svg"
-import Link from "next/link"
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = (): JSX.Element => {
   const [displayNav, setDisplayNav] = useState<boolean>(false)
+
+  const userLoggedIn = useAppSelector((state) => state.user.loggedIn)
 
   const handleNavbar = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault()
@@ -48,7 +55,11 @@ const Navbar: React.FC = () => {
       </div>
       <div className="right-wrapper h-full flex flex-row items-center justify-center">
         <div className="py-2 px-4 font-semibold text-sm rounded-3xl hover:shadow-xl hover:text-blurple transition-all duration-200 ease-linear bg-white cursor-pointer mr-4">
-          <Link href="/auth/login">Login</Link>
+          {userLoggedIn ? (
+            router().push("/channels/@me")
+          ) : (
+            <Link href="/auth/login">Login</Link>
+          )}
         </div>
         <div className="hamburger sm:block lg:hidden">
           <Image

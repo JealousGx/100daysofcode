@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
 import React, { useState } from "react"
+import { useRouter } from "next/router"
 
 import Logo from "../../assets/Discord-Logo-White.png"
 import AddIcon from "@mui/icons-material/Add"
@@ -11,9 +12,11 @@ import { servers } from "../data"
 import { ServerButton, SidebarContainer } from "./styles"
 import { setServer } from "../../../redux/Reducers/serverReducer"
 import { useAppDispatch } from "../../../redux/hooks"
+
 const Index: React.FC = ({ children }): JSX.Element => {
   const dispatch = useAppDispatch()
   const [activeTab, setActiveTab] = useState<number>(servers.length + 1)
+  const router = useRouter()
 
   // Function to set the active server through Redux
   const setActiveServer = (serverID: number, serverName: string) => {
@@ -24,6 +27,10 @@ const Index: React.FC = ({ children }): JSX.Element => {
         serverName,
       })
     )
+
+    if (serverName === "Home") {
+      router.push(`/channels/@me`)
+    }
   }
 
   return (

@@ -4,8 +4,12 @@ import Link from "next/link"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import { SubmitHandler, useForm } from "react-hook-form"
-import { DOB } from "./dob"
 import { useRouter } from "next/router"
+
+import { useAppSelector, useAppDispatch } from "../../../redux/hooks"
+import { register as userRegister } from "../../../redux/Reducers/userReducer"
+
+import { DOB } from "./dob"
 
 type IFormValues = {
   email: string
@@ -23,6 +27,7 @@ const Index = () => {
     formState: { errors },
   } = useForm<IFormValues>()
 
+  const dispatch = useAppDispatch()
   const router = useRouter()
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -37,8 +42,16 @@ const Index = () => {
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     console.log(data)
-    router.push("/channels/channel")
+    router.push("/channels/@me")
     setLoading(true)
+
+    dispatch(
+      userRegister({
+        userName: data.username,
+        email: data.email,
+        loggedIn: true,
+      })
+    )
 
     const now = new Date()
     getAllDaysInMonth(now.getFullYear(), now.getMonth())
