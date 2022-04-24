@@ -21,6 +21,11 @@ type PreviewType = {
   preview: string
 }
 
+type Props = {
+  displaySettings: boolean
+  setDisplaySettings: React.Dispatch<React.SetStateAction<boolean>>
+}
+
 type IFormValues = {
   email: string
   username: string
@@ -28,7 +33,7 @@ type IFormValues = {
   bio?: string
 }
 
-const Settings = (props: any) => {
+const Settings: React.FC<Props> = (props): JSX.Element => {
   const {
     register,
     handleSubmit,

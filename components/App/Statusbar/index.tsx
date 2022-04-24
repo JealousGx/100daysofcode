@@ -2,15 +2,15 @@ import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
 import Logo from "../../assets/Discord-Logo-White.png"
-import { data } from "./data"
+import { servers } from "../data"
 import { StatusContainer, Profile, ProfileCard, Input } from "./styles"
 
-const Index = () => {
+const Index: React.FC = (): JSX.Element => {
   const [activeProfile, setActiveProfile] = useState<number>(0)
   const profileRef = useRef<any>()
 
   useEffect(() => {
-    if (data) {
+    if (servers) {
       const handler = (event: Event) => {
         if (!profileRef.current.contains(event.target)) {
           setActiveProfile(0)
@@ -24,7 +24,7 @@ const Index = () => {
     }
   })
 
-  if (!data) {
+  if (!servers) {
     return (
       <StatusContainer>
         <div className="mx-2 w-[6rem] h-3 rounded-[0.2rem] bg-gray-text animate-pulse" />
@@ -38,97 +38,119 @@ const Index = () => {
 
   return (
     <StatusContainer>
-      {data &&
-        data.ranks.map((rank, index) => {
-          let totalUsersInRank = 0
-          data.users.filter((user) => user.rank === rank && totalUsersInRank++)
-          return (
-            <div className="py-4" key={index}>
-              <div className="text-gray-text text-sm font-bold uppercase pl-2">
-                {rank} - {totalUsersInRank}
-                <br />
-              </div>
-              {data.users.map((user) => {
-                return (
-                  user.rank === rank && (
-                    <Profile
-                      ref={profileRef}
-                      onClick={() => setActiveProfile(user.id)}
-                      key={user.id}
-                      userColor={user.color}
-                      className={`group`}
-                      isActive={user.id === activeProfile}
-                    >
-                      <div
-                        className={`p-[0.4rem] mr-2 flex items-center justify-center rounded-full ${
-                          user.bgColor
-                        } ${
-                          user.status === "offline"
-                            ? "opacity-50"
-                            : "opacity-100"
-                        } group-hover:opacity-100`}
+      {servers &&
+        servers.map((server) =>
+          server.ranks.map((rank, index) => {
+            let totalUsersInRank = 0
+            server.users.filter(
+              (user) => user.userRank === rank && totalUsersInRank++
+            )
+            return (
+              <div className="py-4" key={index}>
+                <div className="text-gray-text text-sm font-bold uppercase pl-2">
+                  {rank} - {totalUsersInRank}
+                  <br />
+                </div>
+                {server.users.map((user) => {
+                  return (
+                    user.userRank === rank && (
+                      <Profile
+                        ref={profileRef}
+                        onClick={() => setActiveProfile(user.id)}
+                        key={user.id}
+                        userColor={user.userColor}
+                        className={`group`}
+                        isActive={user.id === activeProfile}
                       >
-                        <Image
-                          src={Logo}
-                          alt="Profile Logo"
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-                      <span
-                        className={`${
-                          user.status === "offline"
-                            ? "opacity-50"
-                            : "opacity-100"
-                        } group-hover:opacity-100`}
-                      >
-                        {user.name}
-                      </span>
-                      <ProfileCard isActive={user.id === activeProfile}>
-                        <div className="pb-3 mb-3 border-b-[1px] border-b-gray-text border-opacity-50">
+                        {user.userImg ? (
                           <div
-                            className={`w-[4.5rem] h-[4.5rem] mr-2 flex items-center justify-center rounded-full ${user.bgColor} mb-4 hover:opacity-50 cursor-pointer`}
+                            className={` mr-2 flex items-center justify-center rounded-full ${
+                              user.status === "offline"
+                                ? "opacity-50"
+                                : "opacity-100"
+                            } group-hover:opacity-100`}
+                          >
+                            <Image
+                              className="rounded-full"
+                              src={user.userImg}
+                              alt={user.userName}
+                              width={32}
+                              height={32}
+                            />
+                          </div>
+                        ) : (
+                          <div
+                            className={`p-[0.4rem] mr-2 flex items-center justify-center rounded-full ${
+                              user.bgColor
+                            } ${
+                              user.status === "offline"
+                                ? "opacity-50"
+                                : "opacity-100"
+                            } group-hover:opacity-100`}
                           >
                             <Image
                               src={Logo}
-                              alt="Profile Logo"
-                              width={42}
-                              height={42}
+                              alt={user.userName}
+                              width={20}
+                              height={20}
                             />
                           </div>
-                          <span className="text-off-white text-2xl">
-                            {user.name}
-                            <span className="text-gray-text text-xl">
-                              #{user.hash}
+                        )}
+                        <span
+                          className={`${
+                            user.status === "offline"
+                              ? "opacity-50"
+                              : "opacity-100"
+                          } group-hover:opacity-100`}
+                        >
+                          {user.userName}
+                        </span>
+                        <ProfileCard isActive={user.id === activeProfile}>
+                          <div className="pb-3 mb-3 border-b-[1px] border-b-gray-text border-opacity-50">
+                            <div
+                              className={`w-[4.5rem] h-[4.5rem] mr-2 flex items-center justify-center rounded-full ${user.bgColor} mb-4 hover:opacity-50 cursor-pointer`}
+                            >
+                              <Image
+                                src={Logo}
+                                alt="Profile Logo"
+                                width={42}
+                                height={42}
+                              />
+                            </div>
+                            <span className="text-off-white text-2xl">
+                              {user.userName}
+                              <span className="text-gray-text text-xl">
+                                #{user.userHash}
+                              </span>
                             </span>
-                          </span>
-                          {user.status !== "offline" && (
-                            <span className="absolute top-3 right-4 flex flex-row items-center ml-4 text-[0.75rem] text-green">
-                              <div className="w-2 h-2 rounded-full bg-green mr-2" />
-                              Online
-                            </span>
-                          )}
-                        </div>
-                        <div>
-                          <p className="w-full h-10 whitespace-nowrap text-gray-400 text-[1rem]">
-                            Bio:{" "}
-                            <span className="text-[0.775rem] text-gray-500">
-                              {user.bio}
-                            </span>
-                          </p>
-                          <Input
-                            type="text"
-                            placeholder={`Message @${user.name}`}
-                          />
-                        </div>
-                      </ProfileCard>
-                    </Profile>
+                            {user.status !== "offline" && (
+                              <span className="absolute top-3 right-4 flex flex-row items-center ml-4 text-[0.75rem] text-green">
+                                <div className="w-2 h-2 rounded-full bg-green mr-2" />
+                                Online
+                              </span>
+                            )}
+                          </div>
+                          <div>
+                            <p className="w-full h-10 whitespace-nowrap text-gray-400 text-[1rem]">
+                              Bio:{" "}
+                              <span className="text-[0.775rem] text-gray-500">
+                                {user.userBio}
+                              </span>
+                            </p>
+                            <Input
+                              type="text"
+                              placeholder={`Message @${user.userName}`}
+                            />
+                          </div>
+                        </ProfileCard>
+                      </Profile>
+                    )
                   )
-                )
-              })}
-            </div>
-          )
-        })}
+                })}
+              </div>
+            )
+          })
+        )}
     </StatusContainer>
   )
 }

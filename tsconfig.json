@@ -21,8 +21,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "components/App/Sidebar/styles.ts"
+    "**/*.tsx"
+    // "components/App/Sidebar/styles.ts"
   ],
   "exclude": ["node_modules"]
 }

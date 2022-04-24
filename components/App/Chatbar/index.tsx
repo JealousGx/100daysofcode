@@ -3,7 +3,7 @@ import ChannelsContainer from "./ChannelsContainer"
 import ChatContainer from "./ChatContainer"
 import { ChatbarContainer } from "./styles"
 
-const Index = () => {
+const Index: React.FC = (): JSX.Element => {
   return (
     <ChatbarContainer>
       <ChannelsContainer />

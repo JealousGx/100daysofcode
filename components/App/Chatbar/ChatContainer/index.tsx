@@ -12,7 +12,7 @@ import {
 import UserAvatar from "../UserAvatar"
 import { chat } from "./data"
 
-const Index = () => {
+const Index: React.FC = (): JSX.Element => {
   return (
     <ChatbarComponent>
       <Messages>

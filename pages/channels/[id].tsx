@@ -2,12 +2,9 @@ import Head from "next/head"
 import React from "react"
 import App from "../../components/App"
 
-const Index = () => {
+const Index: React.FC = (): JSX.Element => {
   return (
     <div>
-      <Head>
-        <title>Jealous</title>
-      </Head>
       <App />
     </div>
   )

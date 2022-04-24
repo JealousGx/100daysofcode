@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar"
 import Chatbar from "./Chatbar"
 import Statusbar from "./Statusbar"
 
-const Index = () => {
+const Index: React.FC = (): JSX.Element => {
   return (
     <div>
       <Sidebar>
