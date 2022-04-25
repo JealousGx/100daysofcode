@@ -14,7 +14,7 @@
 
 ## Overview
 
-![Landing Page](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/assets/achievements/Discord%20Landing%20Page.png)
+![Landing Page](https://raw.githubusercontent.com/JealousGx/100daysofcode/discord-clone/frontend/assets/achievements/Discord%20Landing%20Page.png)
 
 ### Built With
 
