@@ -1,28 +1,36 @@
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
+import { useAppSelector } from "../../../redux/hooks"
+
 import Logo from "../../assets/Discord-Logo-White.png"
 import { servers } from "../data"
 import { StatusContainer, Profile, ProfileCard, Input } from "./styles"
 
 const Index: React.FC = (): JSX.Element => {
+  // Get current active server from Redux
+  const activeServer = useAppSelector((state) => state.server.serverName)
+
   const [activeProfile, setActiveProfile] = useState<number>(0)
   const profileRef = useRef<any>()
 
-  useEffect(() => {
-    if (servers) {
-      const handler = (event: Event) => {
-        if (!profileRef.current.contains(event.target)) {
-          setActiveProfile(0)
-        }
-      }
-      document.addEventListener("mouseup", handler)
+  // Filtering the the active server
+  const filteredServer = servers.filter(
+    (server) => server.serverName === activeServer
+  )
 
-      return () => {
-        document.removeEventListener("mouseup", handler)
+  useEffect(() => {
+    const handler = (event: Event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setActiveProfile(0)
       }
     }
-  })
+    document.addEventListener("mouseup", handler)
+
+    return () => {
+      document.removeEventListener("mouseup", handler)
+    }
+  }, [])
 
   if (!servers) {
     return (
@@ -38,8 +46,8 @@ const Index: React.FC = (): JSX.Element => {
 
   return (
     <StatusContainer>
-      {servers &&
-        servers.map((server) =>
+      {filteredServer &&
+        filteredServer.map((server) =>
           server.ranks.map((rank, index) => {
             let totalUsersInRank = 0
             server.users.filter(

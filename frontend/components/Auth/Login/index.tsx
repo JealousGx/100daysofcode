@@ -7,7 +7,7 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import { SubmitHandler, useForm } from "react-hook-form"
 
-import { useAppSelector, useAppDispatch } from "../../../redux/hooks"
+import { useAppDispatch } from "../../../redux/hooks"
 import { login } from "../../../redux/Reducers/userReducer"
 
 import qrCode from "../../assets/qr_code.png"
@@ -43,6 +43,7 @@ const Index = () => {
     dispatch(
       login({
         loggedIn: true,
+        email: data.email,
       })
     )
   }

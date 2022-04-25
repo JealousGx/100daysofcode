@@ -1,6 +1,8 @@
 import React from "react"
 import Image from "next/image"
 
+import { useAppSelector } from "../../../../redux/hooks"
+
 import Logo from "../../../assets/Discord-Logo-White.png"
 import { UserControls } from "./styles"
 import SettingsIcon from "@mui/icons-material/Settings"
@@ -14,6 +16,11 @@ const UserControlsWrapper: React.FC<Props> = ({
   displaySettings,
   setDisplaySettings,
 }): JSX.Element => {
+  const currentUsername = useAppSelector((state) => state.user.userName) // Get current user's username
+
+  // Generator a random id between 1000 and 10000 for user (To be modified after implementing backend)
+  const randomNum = Math.floor(Math.random() * (10000 - 1000 + 1) + 1000)
+
   return (
     <UserControls>
       <div className="flex">
@@ -21,9 +28,10 @@ const UserControlsWrapper: React.FC<Props> = ({
           <Image src={Logo} alt="Profile Logo" width={20} height={20} />
         </div>
         <div className="flex flex-col leading-[1rem] text-white tracking-wide font-bold cursor-pointer">
-          Jealous
-          <span className="text-[#b9bbbe] text-[0.675rem] font-normal">
-            #0000
+          {currentUsername ? currentUsername : "Jealous"}
+          <span className="text-[#b9bbbe] text-[0.85rem] font-normal">
+            <span>#</span>
+            {randomNum}
           </span>
         </div>
       </div>

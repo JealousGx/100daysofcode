@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react"
+import Image from "next/image"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { useDropzone } from "react-dropzone"
+
+import { useAppSelector } from "../../../../redux/hooks"
 
 import {
   SettingsContainer,
@@ -14,12 +17,7 @@ import {
 } from "./styles"
 
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded"
-import Image from "next/image"
 import UserAvatar from "../UserAvatar"
-
-type PreviewType = {
-  preview: string
-}
 
 type Props = {
   displaySettings: boolean
@@ -43,6 +41,10 @@ const Settings: React.FC<Props> = (props): JSX.Element => {
   const settingsRef = useRef<any>()
   const { setDisplaySettings, displaySettings } = props
   const [userPictures, setUserPictures] = useState<picType[]>([])
+
+  // Get current user's username and email
+  const currentUsername = useAppSelector((state) => state.user.userName)
+  const currentUserEmail = useAppSelector((state) => state.user.email)
 
   // Configuring Dropzone to select only one file of type image and setting that file through setUserPicture
   const { getRootProps, getInputProps } = useDropzone({
@@ -147,7 +149,9 @@ const Settings: React.FC<Props> = (props): JSX.Element => {
                 type="email"
                 {...register("email")}
                 // Change the defaultValue dynamically after implementing the API
-                defaultValue="abcd@gmail.com"
+                defaultValue={`${
+                  currentUserEmail ? currentUserEmail : "test@gmail.com"
+                }`}
                 placeholder="Change email"
                 autoComplete="off"
                 className={`w-full mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.75px] border-solid border-[#000000] ${
@@ -177,7 +181,9 @@ const Settings: React.FC<Props> = (props): JSX.Element => {
                 type="username"
                 {...register("username")}
                 // Change the defaultValue dynamically after implementing the API
-                defaultValue="Jealous"
+                defaultValue={`${
+                  currentUsername ? currentUsername : "Jealous"
+                }`}
                 placeholder="Change username"
                 autoComplete="off"
                 className={`w-full mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.75px] border-solid border-[#000000] ${
@@ -206,7 +212,6 @@ const Settings: React.FC<Props> = (props): JSX.Element => {
               <input
                 type="password"
                 {...register("password")}
-                // Change the defaultValue dynamically after implementing the API
                 defaultValue="*********"
                 autoComplete="off"
                 placeholder="Change password"
@@ -237,7 +242,9 @@ const Settings: React.FC<Props> = (props): JSX.Element => {
                 cols={4}
                 {...register("bio")}
                 // Change the defaultValue dynamically after implementing the API
-                defaultValue="Hi, this is Jealous!"
+                defaultValue={`Hi, this is ${
+                  currentUsername ? currentUsername : "Jealous"
+                }!`}
                 placeholder="A little information about yourself. 25 words max."
                 autoComplete="off"
                 className={`w-full mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.75px] border-solid border-[#000000] ${
