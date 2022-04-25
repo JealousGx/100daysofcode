@@ -1,7 +1,7 @@
 import React from "react"
 import Register from "../../../components/Auth/Register"
 
-const index: React.FC = () => {
+const index: React.FC = (): JSX.Element => {
   return (
     <div>
       <Register />

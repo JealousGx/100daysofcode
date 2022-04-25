@@ -6,7 +6,7 @@ import Chilling1 from "../../assets/hero-chilling.svg"
 import Chilling2 from "../../assets/hero-chilling-2.svg"
 import Clouds from "../../assets/clouds.svg"
 
-const Header: React.FC = () => {
+const Header: React.FC = (): JSX.Element => {
   return (
     <div className="relative z-10 lg:py-5 pt-4 px-6 lg:h-[94vh] h-[50rem] bg-[#404eed] overflow-hidden">
       <Navbar />

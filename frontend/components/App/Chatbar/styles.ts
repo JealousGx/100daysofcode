@@ -4,8 +4,13 @@ interface AvatarBG {
   bgColor: string
 }
 
-export const ChatbarContainer = styled.div`
-  width: 79.5vw;
+interface ChatbarType {
+  activeServer: string
+}
+
+export const ChatbarContainer = styled.div<ChatbarType>`
+  ${({ activeServer }) =>
+    activeServer === "Home" ? "width: 100%;" : "width: 79.5vw;"}
   height: 100vh;
   padding-right: 1.7rem;
   background-color: rgb(54, 57, 63);

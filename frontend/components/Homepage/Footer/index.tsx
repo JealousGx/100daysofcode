@@ -3,7 +3,6 @@ import React from "react"
 import Link from "next/link"
 
 import { useAppSelector } from "../../../redux/hooks"
-import { selectUserLogged } from "../../../redux/Reducers/userReducer"
 
 import TwitterIcon from "@mui/icons-material/Twitter"
 import InstagramIcon from "@mui/icons-material/Instagram"
@@ -14,7 +13,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import Logo from "../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_white_RGB.png"
 import USAFlag from "../../assets/usa_flag.png"
 
-const Footer: React.FC = () => {
+const Footer: React.FC = (): JSX.Element => {
   const gotoTop = () => {
     window.scrollTo({
       top: 0,

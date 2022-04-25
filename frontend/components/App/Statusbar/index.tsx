@@ -7,7 +7,9 @@ import Logo from "../../assets/Discord-Logo-White.png"
 import { servers } from "../data"
 import { StatusContainer, Profile, ProfileCard, Input } from "./styles"
 
-const Index: React.FC = (): JSX.Element => {
+type FCType = JSX.Element | null
+
+const Index: React.FC = (): FCType => {
   // Get current active server from Redux
   const activeServer = useAppSelector((state) => state.server.serverName)
 
@@ -42,6 +44,10 @@ const Index: React.FC = (): JSX.Element => {
         </div>
       </StatusContainer>
     )
+  }
+
+  if (activeServer === "Home") {
+    return null
   }
 
   return (

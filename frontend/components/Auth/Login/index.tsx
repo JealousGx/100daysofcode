@@ -17,7 +17,7 @@ interface IFormValues {
   password: string
 }
 
-const Index = () => {
+const Index: React.FC = (): JSX.Element => {
   const {
     register,
     handleSubmit,

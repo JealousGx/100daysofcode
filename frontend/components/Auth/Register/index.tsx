@@ -20,7 +20,7 @@ type IFormValues = {
   year: number
 }
 
-const Index = () => {
+const Index: React.FC = (): JSX.Element => {
   const {
     register,
     handleSubmit,
@@ -164,6 +164,7 @@ const Index = () => {
                     type="text"
                     {...register("username", {
                       required: "This field is required",
+                      maxLength: 8,
                     })}
                     autoComplete="off"
                     className={`mb-1 bg-[#303339] py-[0.5rem] px-[0.75rem] text-info-text rounded-[0.175rem] outline-none border-[1.75px] border-solid border-[#000000] ${

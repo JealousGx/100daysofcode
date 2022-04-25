@@ -45,7 +45,7 @@ const heroData: HeroDataType[] = [
   },
 ]
 
-const HeroSection: React.FC = () => {
+const HeroSection: React.FC = (): JSX.Element => {
   useEffect(() => {
     AOS.init()
   }, [])

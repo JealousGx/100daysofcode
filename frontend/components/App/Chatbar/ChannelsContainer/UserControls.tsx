@@ -6,6 +6,7 @@ import { useAppSelector } from "../../../../redux/hooks"
 import Logo from "../../../assets/Discord-Logo-White.png"
 import { UserControls } from "./styles"
 import SettingsIcon from "@mui/icons-material/Settings"
+import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded"
 
 interface Props {
   displaySettings: boolean
@@ -35,11 +36,12 @@ const UserControlsWrapper: React.FC<Props> = ({
           </span>
         </div>
       </div>
-      <div className="p-1 hover:bg-[#42464D] rounded-[0.1875rem] transition-all ease-linear duration-[25ms]">
+      <div className="flex items-center justify-between gap-1 text-white p-1">
         <SettingsIcon
-          className="text-white cursor-pointer"
+          className="cursor-pointer hover:bg-[#42464D] rounded-[0.1875rem] transition-all ease-linear duration-[25ms]"
           onClick={() => setDisplaySettings(!displaySettings)}
         />
+        <ExitToAppRoundedIcon className="cursor-pointer hover:bg-[#42464D] rounded-[0.1875rem] transition-all ease-linear duration-[25ms]" />
       </div>
     </UserControls>
   )
