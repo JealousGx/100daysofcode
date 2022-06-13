@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react";
 import {
   ChatbarComponent,
   Messages,
@@ -8,14 +8,26 @@ import {
   MessageDetails,
   Form,
   Input,
-} from "./styles"
-import UserAvatar from "../UserAvatar"
-import { chat } from "./data"
+} from "./styles";
+import UserAvatar from "../UserAvatar";
+import { chat } from "./data";
 
 const Index: React.FC = (): JSX.Element => {
+  const messagesEndRef = useRef<HTMLInputElement>(null); // Ref for the last message.
+  const scrollToBottom = () => {
+    const node = messagesEndRef.current;
+    if (node) {
+      node.scrollTop = node.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chat]);
+
   return (
     <ChatbarComponent>
-      <Messages>
+      <Messages ref={messagesEndRef}>
         {chat.map((message) => {
           return (
             <MessageContainer key={message.id}>
@@ -35,7 +47,7 @@ const Index: React.FC = (): JSX.Element => {
                 <p className="text-white">{message.msg}</p>
               </UserMessage>
             </MessageContainer>
-          )
+          );
         })}
       </Messages>
       <FormContainer>
@@ -45,7 +57,7 @@ const Index: React.FC = (): JSX.Element => {
         </Form>
       </FormContainer>
     </ChatbarComponent>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

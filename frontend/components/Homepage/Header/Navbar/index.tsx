@@ -1,26 +1,26 @@
-import Image from "next/image"
-import React, { useState } from "react"
-import Link from "next/link"
-import { useRouter as router } from "next/router"
+import Image from "next/image";
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter as router } from "next/router";
 
-import { useAppSelector } from "../../../../redux/hooks"
-import { selectUserLogged } from "../../../../redux/Reducers/userReducer"
+import { useAppSelector } from "../../../../redux/hooks";
+import { selectUserLogged } from "../../../../redux/Reducers/userReducer";
 
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos"
-import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
-import hamburger from "../../../assets/hamburger.svg"
-import logo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_white_RGB.svg"
-import darkLogo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_black_RGB.svg"
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import hamburger from "../../../assets/hamburger.svg";
+import logo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_white_RGB.svg";
+import darkLogo from "../../../assets/Logos/2_Full Logo Lockup_Small/RGB/small_logo_black_RGB.svg";
 
 const Navbar: React.FC = (): JSX.Element => {
-  const [displayNav, setDisplayNav] = useState<boolean>(false)
+  const [displayNav, setDisplayNav] = useState<boolean>(false);
 
-  const userLoggedIn = useAppSelector((state) => state.user.loggedIn)
+  const userLoggedIn = useAppSelector((state) => state.user.loggedIn);
 
   const handleNavbar = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault()
-    setDisplayNav(displayNav === false ? true : false)
-  }
+    e.preventDefault();
+    setDisplayNav(displayNav === false ? true : false);
+  };
 
   return (
     <div className="container xl:px-[20vw] lg:px-[5rem] min-w-full flex items-center justify-between">
@@ -143,7 +143,7 @@ const Navbar: React.FC = (): JSX.Element => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
