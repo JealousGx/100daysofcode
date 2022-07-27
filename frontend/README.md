@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://discord-clone-jealous.vercel.app">
+    <a href="https://jealous-discord.vercel.app">
       Demo
     </a>
     <span> | </span>
