@@ -11,4 +11,5 @@
 
 # Unnecessary files / folders.
 **/.husky
+**/.netlify
 /.tours
