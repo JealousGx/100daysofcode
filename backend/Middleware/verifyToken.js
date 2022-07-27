@@ -11,7 +11,7 @@ const verify = (req, res, next) => {
       next();
     });
   } else {
-    return res.status(401).json("You are not authorized to update this user.");
+    return res.status(401).json("Token not provided.");
   }
 };
 

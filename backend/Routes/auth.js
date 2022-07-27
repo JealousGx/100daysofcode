@@ -63,8 +63,12 @@ router.post("/login", async (req, res) => {
   if (!isMatch) {
     return res.status(400).json({ msg: "Incorrect password" }); // If the password is incorrect, return an error.
   }
+
+  const userID = JSON.stringify(user._id).slice(1, -1); // Convert the object to string and remove ""
+
   const payload = {
     user: {
+      _id: userID,
       id: user.id,
       isAdmin: user.isAdmin,
     },
