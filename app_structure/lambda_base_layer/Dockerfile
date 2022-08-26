@@ -18,4 +18,4 @@ RUN pip install -r requirements.txt -t ./python
 
 # ZIP it up
 RUN zip -r layer.zip ./python/
-ENTRYPOINT ["/bin/bash", "-1"]
+ENTRYPOINT ["/bin/bash", "-l"]
