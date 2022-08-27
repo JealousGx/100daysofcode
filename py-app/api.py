@@ -17,6 +17,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
 @app.get("/generate-keywords-snippets-api")
 async def keywords_snippet_api(user_input: str):
     validate_input(user_input)
