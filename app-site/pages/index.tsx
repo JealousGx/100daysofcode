@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+
 import Assistant from "../components/Assistant";
 
 const Home: NextPage = () => {
