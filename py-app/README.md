@@ -1,4 +1,4 @@
-# Brand Assistant App
+# Brand Assistant App - Backend
 
 ![Brand Cover](https://raw.githubusercontent.com/JealousGx/100daysofcode/brand-assistant/app-site/components/static/brand-cover.png)
 
@@ -17,9 +17,8 @@ This web app fetches the keywords and description from the OpenAI API hosted on 
 
 ## Installation
 
-- Install [Node.js](https://nodejs.org/en/) version 16.14.2
-- Install [Next-Auth](https://next-auth.js.org/) version ^4.10.3
-- Install [Axios](https://www.npmjs.com/package/axios) version ^0.27.2
+- Install [Python](https://www.python.org/downloads/) version 3.7.3
+- Install [PIP](https://pip.pypa.io/en/stable/) version 19.3.1
 - Install [AWS Lambda](https://aws.amazon.com/lambda/) version ^1.0.0
 - Install [AWS CDK](https://aws.amazon.com/cdk/) version ^1.60.0
 - Install [AWS CLI](https://aws.amazon.com/cli/) version ^1.16.8
