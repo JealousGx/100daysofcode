@@ -1,9 +1,7 @@
 import React from "react";
 
-interface ILeftArrow {
-  className?: string;
-}
-const LeftArrow: React.FC<ILeftArrow> = ({ className }) => {
+const LeftArrow = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
+  const { className } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

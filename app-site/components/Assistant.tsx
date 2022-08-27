@@ -35,9 +35,7 @@ const Assistant: React.FC = () => {
   };
 
   return (
-    <div
-      className={`flex gap-2 pt-8 relative p-6 flex-col items-center bg-[#36393F] backdrop-blur-lg rounded-lg max-w-sm w-full`}
-    >
+    <div className="flex gap-2 pt-8 relative p-6 flex-col items-center bg-[#36393F] backdrop-blur-lg rounded-lg max-w-sm w-full">
       {data.length > 0 && (
         <button onClick={handleLeftArrowClick}>
           <LeftArrow className="text-info-text absolute left-6 top-6 cursor-pointer hover:text-gray-200 transition" />

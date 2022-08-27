@@ -1,9 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 
 import Assistant from "../components/Assistant";
+import Login from "../components/Login";
 
 const Home: NextPage = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <div className="h-screen w-screen">
       <Head>
@@ -26,7 +30,11 @@ const Home: NextPage = () => {
         </div>
       </div>
       <main className="container w-full h-full flex items-center justify-center">
-        <Assistant />
+        {loggedIn ? (
+          <Assistant />
+        ) : (
+          <Login setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+        )}
       </main>
     </div>
   );

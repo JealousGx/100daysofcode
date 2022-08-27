@@ -1,10 +1,8 @@
 import React from "react";
 
-interface IClipboard {
-  className?: string;
-}
+const Clipboard = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
+  const { className } = props;
 
-const Clipboard: React.FC<IClipboard> = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
