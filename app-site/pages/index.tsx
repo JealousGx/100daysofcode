@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Assistant from "../components/Assistant";
 
 const Home: NextPage = () => {
   return (
@@ -24,9 +25,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <main className="container flex items-center justify-center">
-        <div className="bg-gray-600 rounded-lg max-w-sm h-96 w-full">
-          Brand Assistant
-        </div>
+        <Assistant />
       </main>
     </div>
   );

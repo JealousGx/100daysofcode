@@ -1,10 +1,21 @@
 from fastapi import FastAPI, HTTPException
 from assistant import generate_branding_snippet, generate_keywords
 from mangum import Mangum
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 handler = Mangum(app)
 MAX_INPUT_LENGTH = 24
+
+
+# Add CORS middleware to allow cross-origin requests from any origin
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/generate-keywords-snippets-api")
 async def keywords_snippet_api(user_input: str):
