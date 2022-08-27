@@ -20,12 +20,6 @@ a {
   scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body {
+  background-image: linear-gradient(to right, #141e30, #243b55, #434343, black);
 }
