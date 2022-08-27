@@ -1,6 +1,8 @@
 # Brand Assistant App - Site
 
-![Brand Cover](https://raw.githubusercontent.com/JealousGx/100daysofcode/brand-assistant/app-site/components/static/brand-cover.png)
+<a href="https://jealous-brand-assistant.vercel.app" target="_blank">
+<img src="https://raw.githubusercontent.com/JealousGx/100daysofcode/brand-assistant/app-site/components/static/brand-cover.png" alt="Cover Page">
+</a>
 
 This web app is a tool to help you generate keywords, description for your brand. It is a free service provided by [OpenAI](https://openai.com/).
 
