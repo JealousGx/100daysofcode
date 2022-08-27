@@ -43,12 +43,12 @@ const GeneratedBrand: React.FC<IGeneratedBrand> = ({ data, userInput }) => {
         </div>
         <div className="flex flex-col gap-2 mt-2">
           <h3 className="text-[1rem] font-bold text-info-text">Keywords:</h3>
-          <div className=" flex flex-row gap-2 flex-wrap overflow-hidden">
+          <div className=" flex flex-row gap-[0.4rem] flex-wrap overflow-hidden">
             {keywords.map((keyword, index) => {
               return (
                 <div
                   key={index}
-                  className="bg-[#303339] focus:border-[#00b0f4] py-[0.25rem] text-sm px-[0.5rem] text-info-text placeholder-gray-500 rounded-[0.175rem] outline-none border-[1.75px] border-solid border-[#000000] border-opacity-40 hover:border-opacity-100 transition-all duration-250 ease-linear"
+                  className="bg-[#00468b] bg-opacity-40 hover:bg-opacity-80 py-[0.25rem] text-sm px-[0.5rem] text-info-text rounded-2xl outline-none border-[1.75px] border-solid border-[#00468b] border-opacity-40 hover:border-opacity-100 transition-all duration-250 ease-linear"
                 >
                   {keyword}
                 </div>
