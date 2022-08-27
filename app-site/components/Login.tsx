@@ -17,7 +17,7 @@ const Login: React.FC<ILogin> = (props): JSX.Element => {
   }
 
   return (
-    <div className="flex gap-2 pt-8 relative p-6 flex-col items-center bg-[#36393F] backdrop-blur-lg rounded-lg max-w-sm w-full">
+    <div className="flex gap-2 xs:h-screen pt-8 relative p-6 flex-col items-center xs:justify-center bg-[#36393F] sm:rounded-lg sm:max-w-sm w-full">
       <img src={Logo.src} alt="brand logo" width={48} />
       <h1 className="text-2xl text-info-text font-bold">Brand Assistant</h1>
       <p className="text-info-text text-center mt-2">

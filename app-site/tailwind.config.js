@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -11,6 +12,11 @@ module.exports = {
         "hover-blurple": "#4752C4",
         "info-text": "#b9bbbe",
       },
+    },
+    screens: {
+      xs: { max: "639px" },
+
+      ...defaultTheme.screens,
     },
   },
   plugins: [],
