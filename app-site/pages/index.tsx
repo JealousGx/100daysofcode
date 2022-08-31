@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           <div className="circle-3 -z-10 h-[600px] w-[500px] rounded-full bg-blue-700 mix-blend-multiply blur-[128px]" />
         </div>
       </div>
-      <main className="container w-full h-full flex items-center justify-center">
+      <main className="w-full h-full flex items-center justify-center">
         {loggedIn ? (
           <Assistant />
         ) : (
